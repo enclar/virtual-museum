@@ -1,32 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [image, setImage] = useState("https:\/\/images.collection.cooperhewitt.org\/230909_9e821506a5d46aab_n.jpg");
+
+  const handleClick = () => {
+    fetch('https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.objects.getImages&access_token=4845918c6c961dd37cbb22942d5c2ec8&object_id=18101051')
+    .then((response) => response.json())
+    .then((data) => {
+      setImage(data.images[0].n.url)
+      console.log(data.images[0].n.url)
+    });
+  };
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Testing the Cooperhewitt API</h1>
+      <button onClick={handleClick}>Change Image</button>
+      <img
+        src={image}
+        alt="fragement"
+      />
     </div>
   )
 }
