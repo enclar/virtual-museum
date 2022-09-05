@@ -1,0 +1,43 @@
+@font-face {
+    font-family: ch-semibold;
+    src: url("../fonts/ch-semibold.otf");
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 56);
+    color: aliceblue;
+    height: 150px;
+    padding: 0 50px 0 50px;
+    font-family: ch-semibold;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#nav-title {
+    line-height: 85%;
+}
+
+#nav-descript {
+    font-size: 18px;
+}
+
+#nav {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-page {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+a.nav-link:hover {
+    color: hotpink;
+}

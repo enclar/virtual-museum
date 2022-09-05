@@ -1,27 +1,30 @@
 import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
-function App() {
-  const [image, setImage] = useState("https:\/\/images.collection.cooperhewitt.org\/230909_9e821506a5d46aab_n.jpg");
+// Importing Components
+import Home from "./Home/Home";
+import Layout from "./NavBar/Layout";
+import Explore from "./Explore/Explore";
+import Curate from "./Curate/Curate";
+import PlanYourVisit from "./Plan/PlanYourVisit";
 
-  const handleClick = () => {
-    fetch('https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.objects.getImages&access_token=&object_id=18101051')
-    .then((response) => response.json())
-    .then((data) => {
-      setImage(data.images[0].n.url)
-      console.log(data.images[0].n.url)
-    });
-  };
+const App = () => {
 
   return (
-    <div className="App">
-      <h1>Testing the Cooperhewitt API</h1>
-      <button onClick={handleClick}>Change Image</button>
-      <img
-        src={image}
-        alt="fragement"
-      />
+    <div id="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/curate" element={<Curate />} />
+            <Route path="/plan" element={<PlanYourVisit />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
