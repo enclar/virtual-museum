@@ -20,11 +20,13 @@ a {
 }
 
 #nav-title {
-    line-height: 85%;
+    font-size: 40px;
+    line-height: 60%;
+    margin: 0;
 }
 
 #nav-descript {
-    font-size: 18px;
+    font-size: 23px;
 }
 
 #nav {

@@ -1,0 +1,41 @@
+@font-face {
+    font-family: newyork;
+    src: url("../fonts/newyork.otf");
+}
+
+@font-face {
+    font-family: ch-semibold;
+    src: url("../fonts/ch-semibold.otf");
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0 0 0;
+}
+
+#welcome {
+    font-family: newyork;
+    color: steelblue;
+    margin: 0;
+}
+
+#ch {
+    font-family: ch-semibold;
+    font-size: 100px;
+    text-align: center;
+    text-justify: inter-ideograph;
+    letter-spacing: 3px;
+    line-height: 100%;
+    margin: 50px 0 0 0;
+    color: maroon;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+}
+
+#online {
+    font-family: newyork;
+    color: steelblue;
+    margin: 50px 0 0 0;
+}
