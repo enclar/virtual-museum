@@ -12,13 +12,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px 0 0 0;
+    margin: 0;
+    background: center / cover no-repeat url("../images/home-background.png"), #005f73;
+    height: 100vh;
+}
+
+#background {
+    width: 100vh;
+    height: 100vh;
+    background: url("../images/home-background.png");
 }
 
 #welcome {
     font-family: newyork;
-    color: steelblue;
-    margin: 0;
+    color: aliceblue;
+    margin: 75px 0 0 0;
 }
 
 #ch {
@@ -28,14 +36,31 @@
     text-justify: inter-ideograph;
     letter-spacing: 3px;
     line-height: 100%;
-    margin: 50px 0 0 0;
-    color: maroon;
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: white;
+    margin: 75px 0 0 0;
+    color: #9b2226;
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: aliceblue;
+}
+
+#line {
+    background-color: aliceblue;
+    width: 3px;
+    height: 75px;
+    margin-top: 50px;
 }
 
 #online {
+    font-size: 60px;
     font-family: newyork;
-    color: steelblue;
+    color: #ca6702;
     margin: 50px 0 0 0;
+    text-shadow: 2px 2px aliceblue;
+}
+
+#blurb {
+    font-size: 30px;
+    font-family: newyork;
+    color: #94d2bd;
+    margin: 120px 0 0 0;
+    text-align: center;
 }
