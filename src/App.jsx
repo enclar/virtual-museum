@@ -6,6 +6,7 @@ import "./App.css";
 import Home from "./Home/Home";
 import Layout from "./NavBar/Layout";
 import Explore from "./Explore/Explore";
+import ExploreByColor from "./Explore/ByColor/ExploreByColor";
 import Curate from "./Curate/Curate";
 import PlanYourVisit from "./Plan/PlanYourVisit";
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/explore/color" element={<ExploreByColor />} />
             <Route path="/curate" element={<Curate />} />
             <Route path="/plan" element={<PlanYourVisit />} />
           </Route>
