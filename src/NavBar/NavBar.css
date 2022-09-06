@@ -21,7 +21,7 @@ a {
 
 #nav-title {
     font-size: 40px;
-    line-height: 60%;
+    line-height: 80%;
     margin: 0;
 }
 
@@ -36,7 +36,7 @@ a {
 }
 
 .nav-page {
-    font-size: 17px;
+    font-size: 25px;
     font-weight: bold;
 }
 

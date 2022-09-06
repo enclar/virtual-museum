@@ -5,9 +5,9 @@ const Home = () => {
         <div id="home">
             <h1 id="welcome">welcome to</h1>
             <h1 id="ch">
-                COOPER
+                C<span>OO</span>P<span>E</span>R
                 <br />
-                HEWITT
+                H<span>E</span>W<span>I</span>TT
             </h1>
             <div id="line"></div>
             <h1 id="online">online</h1>

@@ -31,7 +31,7 @@
 
 #ch {
     font-family: ch-semibold;
-    font-size: 100px;
+    font-size: 110px;
     text-align: center;
     text-justify: inter-ideograph;
     letter-spacing: 3px;
@@ -40,6 +40,10 @@
     color: #9b2226;
     -webkit-text-stroke-width: 2.5px;
     -webkit-text-stroke-color: aliceblue;
+}
+
+#ch > span {
+    color: #ee9b00;
 }
 
 #line {
@@ -63,4 +67,5 @@
     color: #94d2bd;
     margin: 120px 0 0 0;
     text-align: center;
+    letter-spacing: 3px;
 }
