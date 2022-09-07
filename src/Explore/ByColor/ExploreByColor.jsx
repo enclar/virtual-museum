@@ -8,20 +8,23 @@ const ExploreByColor = () => {
     const dataContext = useContext(DataContext);
     console.log("dataContext:", dataContext);
 
-    // Loading available color swatches upon page loading
+    // Loading available color swatches upon page loading using useEffect
     useEffect(() => {
-        const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.colors.palettes.getInfo&access_token=4845918c6c961dd37cbb22942d5c2ec8&palette=crayola";
+        const fetchData = async () => {
+            const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.colors.palettes.getInfo&access_token=4845918c6c961dd37cbb22942d5c2ec8&palette=crayola";
     
-        fetch(url)
-          .then((response) => response.json())
-          .then((data) => {
-            // setColor(Object.keys(data.colors));
-            dataContext.dispatch({type: "EXPLORE_BY_COLOR", value: Object.keys(data.colors)})
-          })
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                dataContext.dispatch({type: "EXPLORE_BY_COLOR", value: Object.keys(data.colors)});
+            }
 
-          .catch((error) => {
-            console.log(error);
-          });
+            catch (error) {
+                console.log(error)
+            }
+        };
+
+        fetchData();
     }, []);
 
     // Mapping available colors into swatches
@@ -38,7 +41,7 @@ const ExploreByColor = () => {
 
     // Choosing a color and searching for corresponding artworks
     const getResultByColor = async (color) => {
-        const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&color=" + color.substr(1) + "&page=1&per_page=20";
+        const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&color=" + color.substr(1) + "&page=1&per_page=30";
 
         try {
             const response = await fetch(url);
