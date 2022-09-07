@@ -1,18 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { DataContext } from "../../App";
 import "./ExploreByColor.css";
 
 const ExploreByColor = () => {
-    const [colors, setColor] = useState([]);
-    const [status, setStatus] = useState("loading");
-    const [art, setArt] = useState([]);
 
+    const dataContext = useContext(DataContext);
+    console.log("dataContext:", dataContext);
+
+    // Loading available color swatches upon page loading
     useEffect(() => {
         const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.colors.palettes.getInfo&access_token=4845918c6c961dd37cbb22942d5c2ec8&palette=crayola";
     
         fetch(url)
           .then((response) => response.json())
           .then((data) => {
-            setColor(Object.keys(data.colors));
+            // setColor(Object.keys(data.colors));
+            dataContext.dispatch({type: "EXPLORE_BY_COLOR", value: Object.keys(data.colors)})
           })
 
           .catch((error) => {
@@ -20,22 +24,8 @@ const ExploreByColor = () => {
           });
     }, []);
 
-    const getResultByColor = async (color) => {
-        const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&color=" + color.substr(1) + "&page=1&per_page=20";
-
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            setArt(data.objects);
-            console.log(data.objects);
-        }
-
-        catch (error) {
-            console.log(error)
-        };
-    };
-
-    const swatches = colors.map((ele, index) => {
+    // Mapping available colors into swatches
+    const swatches = dataContext.museum.exploreColors.map((ele, index) => {
         return (
             <div
                 className="swatches"
@@ -46,13 +36,33 @@ const ExploreByColor = () => {
         );
     });
 
-    const artwork = art.map((ele, index) => {
+    // Choosing a color and searching for corresponding artworks
+    const getResultByColor = async (color) => {
+        const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&color=" + color.substr(1) + "&page=1&per_page=20";
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            // setArt(data.objects);
+            dataContext.dispatch({type: "FILTER_ART", value: data.objects})
+            // console.log(data.objects);
+        }
+
+        catch (error) {
+            console.log(error)
+        };
+    };
+
+    // Mapping artworks which correspond to selected color into Links with images
+    const artwork = dataContext.museum.filteredArt.map((ele, index) => {
         return (
-            <img
-                className="artwork"
-                src={ele.images[0].sq.url}
-                key={index}
-            />
+            <Link className="artwork" to={`/explore/color/${ele.id}`}>
+                <img
+                    className="artwork"
+                    src={ele.images[0].sq.url}
+                    key={index}
+                />
+            </Link>
         );
     });
 
