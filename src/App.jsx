@@ -8,6 +8,7 @@ import Home from "./Home/Home";
 import Layout from "./NavBar/Layout";
 import Explore from "./Explore/Explore";
 import ExploreByColor from "./Explore/ByColor/ExploreByColor";
+import ExploreByDepartment from "./Explore/ByDepartment/ExploreByDepartment";
 import ObjectDetails from "./Explore/ObjectDetails/ObjectDetails";
 import Favs from "./Favs/Favs";
 import Curate from "./Curate/Curate";
@@ -18,8 +19,11 @@ export const DataContext = createContext();
 const App = () => {
 
   const [museum, dispatch] = useReducer(museumReducer, {
-    exploreColors: ["pink", "blue", "yellow"],
-    filteredArt: []
+    selectedArtwork: {},
+    exploreColors: [],
+    filterByColor: [],
+    exploreDepts: [],
+    filterByDept: [],
   });
 
   return (
@@ -31,7 +35,8 @@ const App = () => {
               <Route index element={<Home />} />
               <Route path="/explore" element={<Explore />} />
               <Route path="/explore/color" element={<ExploreByColor />} />
-              <Route path="explore/color/:code" element={<ObjectDetails />} />
+              <Route path="/explore/dept" element={<ExploreByDepartment />} />
+              <Route path="/details/:code" element={<ObjectDetails />} />
               <Route path="/favs" element={<Favs />} />
               <Route path="/curate" element={<Curate />} />
               <Route path="/plan" element={<PlanYourVisit />} />

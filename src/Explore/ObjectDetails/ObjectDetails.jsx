@@ -1,5 +1,9 @@
-const ObjectDetails = ({ key }) => {
-    console.log(key);
+import { useContext } from "react";
+import { DataContext } from "../../App";
+
+const ObjectDetails = () => {
+    const dataContext = useContext(DataContext);
+    console.log("Selected Art:", dataContext.museum.selectedArtwork);
 
     return (
         <div id="obj-details">

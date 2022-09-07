@@ -8,7 +8,7 @@ const ExploreByColor = () => {
     const dataContext = useContext(DataContext);
     console.log("dataContext:", dataContext);
 
-    // Loading available color swatches upon page loading using useEffect
+    // Loading available color swatches during initial load using useEffect
     useEffect(() => {
         const fetchData = async () => {
             const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.colors.palettes.getInfo&access_token=4845918c6c961dd37cbb22942d5c2ec8&palette=crayola";
@@ -47,7 +47,7 @@ const ExploreByColor = () => {
             const response = await fetch(url);
             const data = await response.json();
             // setArt(data.objects);
-            dataContext.dispatch({type: "FILTER_ART", value: data.objects})
+            dataContext.dispatch({type: "FILTER_ART_BY_COLOR", value: data.objects})
             // console.log(data.objects);
         }
 
@@ -56,14 +56,16 @@ const ExploreByColor = () => {
         };
     };
 
+    // Function to dispatch information to details page
+
     // Mapping artworks which correspond to selected color into Links with images
-    const artwork = dataContext.museum.filteredArt.map((ele, index) => {
+    const artwork = dataContext.museum.filterByColor.map((ele, index) => {
         return (
-            <Link className="artwork" to={`/explore/color/${ele.id}`}>
+            <Link className="artwork" to={`/details/${ele.id}`}>
                 <img
                     className="artwork"
                     src={ele.images[0].sq.url}
-                    key={index}
+                    onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
                 />
             </Link>
         );

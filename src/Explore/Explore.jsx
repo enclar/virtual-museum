@@ -10,6 +10,7 @@ const Explore = () => {
             </div>
             <div id="explore-container">
                 <Link className="explore-cat" to="/explore/color">COLOR</Link>
+                <Link className="explore-cat" to="/explore/dept">DEPARTMENT</Link>
             </div>
         </div>
     );
