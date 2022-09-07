@@ -21,7 +21,7 @@ const ExploreByColor = () => {
     }, []);
 
     const getResultByColor = async (color) => {
-        const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&color=" + color.substr(1) + "&page=1&per_page=18";
+        const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&color=" + color.substr(1) + "&page=1&per_page=20";
 
         try {
             const response = await fetch(url);
@@ -62,6 +62,7 @@ const ExploreByColor = () => {
             <div id="swatch-container">
                 {swatches}
             </div>
+            <h3 id="img-descript">click thumbnail to view detailed artwork and description</h3>
             <div id="img-container">
                 {artwork}
             </div>
