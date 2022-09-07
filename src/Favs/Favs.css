@@ -8,32 +8,19 @@
     src: url("./fonts/ch-semibold.otf");
 }
 
-#curate {
+#favs {
     display: flex;
     flex-direction: column;
     margin: 0;
     background-color: #e9d8a6;
-    height: 100vh;
 }
 
-#curate-title {
+#favs-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin-top: 50px;
-}
-
-#curate-title > h1, h3 {
-    margin: 0;
-}
-
-#curate-title > h1 {
+    margin: 50px 0 0 0;
+    height: 100vh;
     font-family: ch-semibold;
-    color: rgb(172, 59, 59);
-}
-
-#curate-title > h3 {
-    font-family: newyork;
-    color: maroon
 }
