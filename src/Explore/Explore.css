@@ -11,8 +11,10 @@
 #explore {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0;
     background-color: #e9d8a6;
+    height: 100vh;
 }
 
 #explore-title {
@@ -21,7 +23,6 @@
     align-items: center;
     gap: 5px;
     margin: 50px 0 0 0;
-    height: 100vh;
 }
 
 #explore-title > h1, h3 {
@@ -36,4 +37,21 @@
 #explore-title > h3 {
     font-family: newyork;
     color: maroon
+}
+
+#explore-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 50px;
+}
+
+.explore-cat {
+    width: 200px;
+    height: 100px;
+    font-family: ch-semibold;
+    font-size: 25px;
+    text-align: center;
+    line-height: 425%;
+    background-color: maroon;
 }

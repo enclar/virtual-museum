@@ -12,6 +12,7 @@ import Curate from "./Curate/Curate";
 import PlanYourVisit from "./Plan/PlanYourVisit";
 
 const App = () => {
+
   return (
     <div id="app">
       <BrowserRouter>
@@ -20,12 +21,13 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/explore/color" element={<ExploreByColor />} />
+            <Route path="/explore/collection" element={<ExploreByColor />} />
             <Route path="/favs" element={<Favs />} />
             <Route path="/curate" element={<Curate />} />
             <Route path="/plan" element={<PlanYourVisit />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter>      
     </div>
   );
 };
