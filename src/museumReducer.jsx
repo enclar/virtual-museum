@@ -7,16 +7,13 @@ const museumReducer = (state, action) => {
             return ({...state, exploreColors: action.value})
         // ExploreByColor.jsx
         case "FILTER_ART_BY_COLOR":
-            return ({... state, filterByColor: action.value})
+            return ({... state, filterByColor: action.value, searchResults: action.value})
         // ExploreByDepartment.jsx
         case "EXPLORE_BY_DEPT":
             return ({... state, exploreDepts: action.value})
         // ExploreByDepartment.jsx
         case "FILTER_ART_BY_DEPT":
-            return ({...state, filterByDept: action.value})
-        // Results.jsx
-        case "SEARCH_RESULTS":
-            return ({...state, searchResults: action.value})
+            return ({...state, filterByDept: action.value, searchResults: action.value})
     };
 };
 

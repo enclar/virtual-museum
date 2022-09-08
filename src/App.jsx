@@ -9,7 +9,7 @@ import Layout from "./NavBar/Layout";
 import Explore from "./Explore/Explore";
 import ExploreByColor from "./Explore/ByColor/ExploreByColor";
 import ExploreByDepartment from "./Explore/ByDepartment/ExploreByDepartment";
-import ObjectDetails from "./Explore/ObjectDetails/ObjectDetails";
+import ObjectDetails from "./ObjectDetails/ObjectDetails";
 import Favs from "./Favs/Favs";
 import Curate from "./Curate/Curate";
 import PlanYourVisit from "./Plan/PlanYourVisit";

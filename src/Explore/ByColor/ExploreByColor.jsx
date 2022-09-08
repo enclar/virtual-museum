@@ -50,7 +50,7 @@ const ExploreByColor = () => {
             const data = await response.json();
             // setArt(data.objects);
             dataContext.dispatch({type: "FILTER_ART_BY_COLOR", value: data.objects});
-            dataContext.dispatch({type: "SEARCH_RESULTS", value: data.objects});
+            // dataContext.dispatch({type: "SEARCH_RESULTS", value: data.objects});
             // console.log(data.objects);
         }
 
