@@ -24,6 +24,7 @@ const App = () => {
     filterByColor: [],
     exploreDepts: [],
     filterByDept: [],
+    searchResults: []
   });
 
   return (

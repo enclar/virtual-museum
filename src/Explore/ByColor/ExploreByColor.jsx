@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../../App";
 import "./ExploreByColor.css";
 
+import Results from "../Results/Results";
+
 const ExploreByColor = () => {
 
     const dataContext = useContext(DataContext);
@@ -47,7 +49,8 @@ const ExploreByColor = () => {
             const response = await fetch(url);
             const data = await response.json();
             // setArt(data.objects);
-            dataContext.dispatch({type: "FILTER_ART_BY_COLOR", value: data.objects})
+            dataContext.dispatch({type: "FILTER_ART_BY_COLOR", value: data.objects});
+            dataContext.dispatch({type: "SEARCH_RESULTS", value: data.objects});
             // console.log(data.objects);
         }
 
@@ -56,31 +59,13 @@ const ExploreByColor = () => {
         };
     };
 
-    // Function to dispatch information to details page
-
-    // Mapping artworks which correspond to selected color into Links with images
-    const artwork = dataContext.museum.filterByColor.map((ele, index) => {
-        return (
-            <Link className="artwork" to={`/details/${ele.id}`}>
-                <img
-                    className="artwork"
-                    src={ele.images[0].sq.url}
-                    onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
-                />
-            </Link>
-        );
-    });
-
     return (
         <div id="by-color">
             <h1>EXPLORE BY COLOR</h1>
             <div id="swatch-container">
                 {swatches}
             </div>
-            <h3 id="img-descript">click thumbnail to view detailed artwork and description</h3>
-            <div id="img-container">
-                {artwork}
-            </div>
+            <Results />
         </div>
     );
 };
