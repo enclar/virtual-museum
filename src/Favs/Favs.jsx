@@ -19,6 +19,7 @@ const Favs = () => {
                         src={ele?.images[0]?.b?.url}
                         onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
                     />
+                    <h4>{ele?.title}</h4>
                 </Link>
             );
         };

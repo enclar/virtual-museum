@@ -39,28 +39,37 @@ const ObjectDetails = () => {
     return (
         <div id="obj-details">
             <h1 id="title">{artwork?.title}</h1>
-            <div id="frame">
-                <img id="img" src={artwork?.images[0]?.z?.url} alt="artwork" />
-            </div>
-            <div id="currSwatches">{swatches}</div>
-            <div id="description">
-                <h2>{artwork?.description}</h2>
-                <h3>Dimensions: {artwork?.dimensions}</h3>
-                <br />
-                <h3>Date: {artwork?.date}</h3>
-                <h3>Year of Acquisition: {artwork?.year_acquired} </h3>
-                <h3>Medium: {artwork?.medium}</h3>
-                <br />
-                <h3 id="credit-line">{artwork?.creditline}</h3>
-            </div>
-            <div id="buttons">
-                <button
-                    id="like-btn"
-                    onClick={() => dataContext.dispatch({type: "ADD_TO_FAVS", value: artwork})}
-                >LIKE</button>
-                <Link to={"/explore/color"}>BACK</Link>
-            </div>
+            <div id="container">
+                <div id="graphics">
+                    <div id="frame">
+                        <img id="img" src={artwork?.images[0]?.z?.url} alt="artwork" />
+                    </div>
+                    <div id="currSwatches">{swatches}</div>
+                </div>
+                <div id="description">
+                    <h2>
+                        <span>DESCRIPTION</span>
+                        <br />
+                        {artwork?.description}
+                    </h2>
+                    
+                    <h3>Dimensions: {artwork?.dimensions}</h3>
+                    <br />
+                    <h3>Date: {artwork?.date}</h3>
+                    <h3>Year of Acquisition: {artwork?.year_acquired} </h3>
+                    <h3>Medium: {artwork?.medium}</h3>
+                    <br />
+                    <h3 id="credit-line">{artwork?.creditline}</h3>
 
+                    <div id="buttons">
+                        <button
+                            id="like-btn"
+                            onClick={() => dataContext.dispatch({type: "ADD_TO_FAVS", value: artwork})}
+                        >LIKE</button>
+                        <Link to={"/explore/color"}>BACK</Link>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

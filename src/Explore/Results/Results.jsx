@@ -27,6 +27,19 @@ const Results = () => {
         };
     });
 
+    const getInfo = async (id) => {
+        const url = `https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.objects.getInfo&access_token=4845918c6c961dd37cbb22942d5c2ec8&id=${id}`
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            dataContext.dispatch({type: "VIEW_DETAILS", value: data.object})
+        }
+
+        catch (error) {
+            console.log(error)
+        }
+    };
+
     return (
         <div id="results">
             <h3>click thumbnail to view detailed artwork and description</h3>
