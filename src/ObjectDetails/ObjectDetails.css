@@ -45,7 +45,12 @@
     font-style: italic;
 }
 
-#obj-details > a {
+#buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#buttons > a, #like-btn {
     margin-top: 30px;
     width: 100px;
     height: 50px;

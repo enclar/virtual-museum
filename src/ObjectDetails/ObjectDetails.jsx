@@ -5,8 +5,9 @@ import "./ObjectDetails.css";
 
 const ObjectDetails = () => {
     const dataContext = useContext(DataContext);
-    console.log("Selected Art:", dataContext.museum.selectedArtwork);
+    // console.log("Selected Art:", dataContext.museum.selectedArtwork);
     const artwork = dataContext.museum.selectedArtwork;
+    // console.log("Artwork Details:", artwork);
 
     return (
         <div id="obj-details">
@@ -23,9 +24,14 @@ const ObjectDetails = () => {
                 <br />
                 <h3 id="credit-line">{artwork?.creditline}</h3>
             </div>
-            <Link to={"/explore/color"}>
-                <h3>BACK</h3>
-            </Link>
+            <div id="buttons">
+                <button
+                    id="like-btn"
+                    onClick={() => dataContext.dispatch({type: "ADD_TO_FAVS", value: artwork})}
+                >LIKE</button>
+                <Link to={"/explore/color"}>BACK</Link>
+            </div>
+
         </div>
     );
 };

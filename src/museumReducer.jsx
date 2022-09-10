@@ -14,6 +14,9 @@ const museumReducer = (state, action) => {
         // ExploreByDepartment.jsx
         case "FILTER_ART_BY_DEPT":
             return ({...state, filterByDept: action.value, searchResults: action.value})
+        // ObjectDetails.jsx
+        case "ADD_TO_FAVS":
+            return ({...state, favArtworks: [...state.favArtworks, action.value]})
     };
 };
 
