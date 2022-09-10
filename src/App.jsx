@@ -20,6 +20,8 @@ const App = () => {
 
   const [museum, dispatch] = useReducer(museumReducer, {
     selectedArtwork: {},
+    status: "loading",
+    currSwatches: [],
     exploreColors: [],
     filterByColor: [],
     exploreDepts: [],

@@ -2,6 +2,11 @@ const museumReducer = (state, action) => {
     switch (action.type) {
         case "VIEW_DETAILS":
             return ({...state, selectedArtwork: action.value})
+        case "LOADING":
+            return ({...state, status: action.value})
+        // ObjectDetails.jsx
+        case "GET_ARTWORK_SWATCHES":
+            return ({...state, currSwatches: action.value})
         // ExploreByColor.jsx
         case "EXPLORE_BY_COLOR":
             return ({...state, exploreColors: action.value})

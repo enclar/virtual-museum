@@ -13,7 +13,7 @@ const Results = () => {
     // console.log(searchResults);
 
     const results = searchResults.map((ele, index) => {
-        if (searchResults !== [] && ele.id !== null) {
+        if (searchResults !== []) {
             return (
                 <Link className="artwork" to={`/details/${ele.id}`} key={index}>
                     <img
@@ -31,7 +31,7 @@ const Results = () => {
         <div id="results">
             <h3>click thumbnail to view detailed artwork and description</h3>
             <div id="img-container">
-                {results}
+                {dataContext.museum.status == "loading" ? <progress /> : results}
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ const Explore = () => {
         <div id="explore">
             <div id="explore-title">
                 <h1>EXPLORE</h1>
-                <h3>explore what the museum has to offer at your own pace</h3>
+                <h3>explore our collection of digitized exhibits at your own leisure</h3>
             </div>
             <div id="explore-container">
                 <Link className="explore-cat" to="/explore/color">COLOR</Link>

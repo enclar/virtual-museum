@@ -22,6 +22,7 @@ const ExploreByColor = () => {
             }
 
             catch (error) {
+                dataContext.dispatch({type: "LOADING", value: "error"})
                 console.log(error)
             }
         };
@@ -46,12 +47,11 @@ const ExploreByColor = () => {
         const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&color=" + color.substr(1) + "&page=1&per_page=30";
 
         try {
+            dataContext.dispatch({type: "LOADING", value: "loading"})
             const response = await fetch(url);
             const data = await response.json();
-            // setArt(data.objects);
+            dataContext.dispatch({type: "LOADING", value: "done"});
             dataContext.dispatch({type: "FILTER_ART_BY_COLOR", value: data.objects});
-            // dataContext.dispatch({type: "SEARCH_RESULTS", value: data.objects});
-            // console.log(data.objects);
         }
 
         catch (error) {
