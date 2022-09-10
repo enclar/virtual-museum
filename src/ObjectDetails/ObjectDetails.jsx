@@ -12,7 +12,9 @@ const ObjectDetails = () => {
     return (
         <div id="obj-details">
             <h1 id="title">{artwork?.title}</h1>
-            <img id="img" src={artwork?.images[0]?.z?.url} alt="artwork" />
+            <div id="frame">
+                <img id="img" src={artwork?.images[0]?.z?.url} alt="artwork" />
+            </div>
             <div id="description">
                 <h2>{artwork?.description}</h2>
                 <h3>Dimensions: {artwork?.dimensions}</h3>
