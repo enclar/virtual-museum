@@ -10,19 +10,34 @@ const Results = () => {
 
     // Saving the result array into a variable
     const searchResults = dataContext.museum.searchResults;
+    console.log(dataContext);
 
     const results = searchResults.map((ele, index) => {
         if (searchResults !== []) {
-            return (
-                <Link className="artwork" to={`/details/${ele.id}`} key={index}>
-                    <img
-                        className="artwork"
-                        alt={ele?.title}
-                        src={ele?.images[0]?.b?.url}
-                        onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
-                    />
-                </Link>
-            );
+            if (dataContext.museum.currExploreParam != "video") {
+                return (
+                    <Link className="artwork" to={`/details/${ele.id}`} key={index}>
+                        <img
+                            className="artwork"
+                            alt={ele?.title}
+                            src={ele?.images[0]?.b?.url}
+                            onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
+                        />
+                    </Link>
+                );
+            } else if (dataContext.museum.currExploreParam == "video") {
+                return (
+                    <Link className="artwork" to={`/details/${ele.id}`} key={index}>
+                        <iframe
+                            className="artwork"
+                            alt={ele?.title}
+                            src={ele?.youtube_url}
+                            onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
+                        />
+                    </Link>
+                );                
+            }
+
         };
     });
 

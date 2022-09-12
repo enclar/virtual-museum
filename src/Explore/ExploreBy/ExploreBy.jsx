@@ -7,6 +7,7 @@ import params from "../exploreParams";
 
 import ExploreByColor from "../ByColor/ExploreByColor";
 import ExploreByDepartment from "../ByDepartment/ExploreByDepartment";
+import ExploreByVideo from "../ByVideo/ExploreByVideo"
 import Results from "../Results/Results";
 
 const ExploreBy = () => {
@@ -32,7 +33,9 @@ const ExploreBy = () => {
             return <ExploreByColor />
         } else if (param == "dept") {
             return <ExploreByDepartment />
-        };
+        } else if (param == "video") {
+            return <ExploreByVideo />
+        }
     };
 
     // Calling the getExploreParam function to assign it to a variable
@@ -42,7 +45,6 @@ const ExploreBy = () => {
         <div id="explore-by">
             <div id="params">{exploreParams}</div>
             {chosenExploreParam}
-            <Results />
         </div>
     );
 };
