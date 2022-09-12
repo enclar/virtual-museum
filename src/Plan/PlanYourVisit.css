@@ -37,3 +37,13 @@
     font-family: newyork;
     color: maroon
 }
+
+#map {
+    background: white;
+    width: 50%;
+    height: 400px;
+    margin-top: 30px;
+    text-align: center;
+    font-family: ch-semibold;
+    letter-spacing: 3px;
+}

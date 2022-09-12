@@ -14,17 +14,18 @@
     align-items: center;
     /* justify-content: center; */
     height: 100%;
-    background-color: aliceblue;
+    background-color: lightgoldenrodyellow;
     color: #005f73;
     padding: 50px 0 100px 0;
+    font-family: ch-semibold;
 }
 
 #title {
-    font-family: ch-semibold;
     background: #9b2226;
     color: white;
     padding: 18px 30px 10px 30px;
     font-size: 40px;
+    box-shadow: 2px 5px 10px #005f73;
 }
 
 #container {
@@ -35,21 +36,15 @@
     width: 70%;
 }
 
-#graphics {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-}
-
 #img {
-    border:solid 2px;
-    border-bottom-color:#ffe;
-    border-left-color:#eed;
-    border-right-color:#eed;
-    border-top-color:#ccb;
-    max-height:100%;
-    max-width:100%;
+    border: solid 2px;
+    border-bottom-color: #ffe;
+    border-left-color: #eed;
+    border-right-color: #eed;
+    border-top-color: #ccb;
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 300px;
 }
 
 #frame {
@@ -91,55 +86,50 @@
       top:-2.5vmin;
 }
 
-.currSwatch {
-    width: 75px;
-    height: 75px;
-}
-
-#currSwatches {
-    display: flex;
-}
-
-#description {
-    margin: 20px 0 0 0;
-    text-align: left;
-    font-family: ch-semibold;
-    max-width: 40%;
-}
-
-#description > * {
+#artwork-info {
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
 
-#description > * > span {
-    background-color: #005f73;
-    color: white;
-    padding: 5px 50px;
+#description > h2,
+#details > h2 {
+    background: #005f73;
     width: fit-content;
-    line-height: 100%;
-}
-
-#credit-line {
-    font-style: italic;
-}
-
-#buttons {
-    display: flex;
-    gap: 20px;
-}
-
-#buttons > a, #like-btn {
-    margin-top: 30px;
-    width: 100px;
-    height: 50px;
-    font-family: ch-semibold;
-    font-size: 20px;
-    background: maroon;
+    height: 40px;
     color: white;
-    outline: none;
-    border-radius: 5px;
+    font-size: 25px;
+    line-height: 180%;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    padding: 0 20px;
+}
+
+#details {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h3 > span.category {
+    font-size: 110%;
+    text-decoration: underline;
+}
+
+h3 > span.not-avail {
+    font-style: italic;
+    color:#9b2226;
+    font-weight: lighter;
+}
+
+#swatches {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.swatch {
+    width: 40px;
+    height: 40px;
 }
