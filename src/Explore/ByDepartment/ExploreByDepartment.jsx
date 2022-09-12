@@ -16,11 +16,18 @@ const ExploreByDepartment = () => {
             const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.departments.getList&access_token=4845918c6c961dd37cbb22942d5c2ec8&page=1&per_page=100"
 
             try {
+                // Fetching all the available departments
                 const response = await fetch(url);
                 const data = await response.json();
-                // console.log(data);
-                // console.log("deptsArr:", deptsArr);
-                dataContext.dispatch({type: "EXPLORE_BY_DEPT", value: data.departments})
+
+                dataContext.dispatch({type: "FETCH_DEPTS", value: data.departments})
+            
+                // Fetching the search results from the first available department
+                dataContext.dispatch({type: "LOADING", value: "loading"})
+                const responseOne = await fetch ("https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&department_id=35347493&page=1&per_page=30");
+                const dataOne = await responseOne.json();
+                dataContext.dispatch({type: "LOADING", value: "done"});
+                dataContext.dispatch({type: "FILTER_ART", value: dataOne.objects});
             }
 
             catch (error) {
@@ -32,7 +39,7 @@ const ExploreByDepartment = () => {
     }, []);
 
     // Mapping available departments
-    const depts = dataContext.museum.exploreDepts.map((ele, index) => {
+    const depts = dataContext.museum.availDepts.map((ele, index) => {
         return (
             <div
                 className="dept"
@@ -47,11 +54,11 @@ const ExploreByDepartment = () => {
         const url = `https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&department_id=${dept}&page=1&per_page=20`;
 
         try {
+            dataContext.dispatch({type: "LOADING", value: "loading"})
             const response = await fetch(url);
             const data = await response.json();
-            // setArt(data.objects);
-            dataContext.dispatch({type: "FILTER_ART_BY_DEPT", value: data.objects});
-            // console.log(data.objects);
+            dataContext.dispatch({type: "LOADING", value: "done"});
+            dataContext.dispatch({type: "FILTER_ART", value: data.objects});
         }
 
         catch (error) {
@@ -66,7 +73,6 @@ const ExploreByDepartment = () => {
             <div id="dept-container">
                 {depts}
             </div>
-            <Results />
         </div>
     );
 };

@@ -7,8 +7,9 @@ import "./App.css";
 import Home from "./Home/Home";
 import Layout from "./NavBar/Layout";
 import Explore from "./Explore/Explore";
-import ExploreByColor from "./Explore/ByColor/ExploreByColor";
-import ExploreByDepartment from "./Explore/ByDepartment/ExploreByDepartment";
+// import ExploreByColor from "./Explore/ByColor/ExploreByColor";
+// import ExploreByDepartment from "./Explore/ByDepartment/ExploreByDepartment";
+import ExploreBy from "./Explore/ExploreBy/ExploreBy";
 import ObjectDetails from "./ObjectDetails/ObjectDetails";
 import Favs from "./Favs/Favs";
 import Curate from "./Curate/Curate";
@@ -21,12 +22,10 @@ const App = () => {
   const [museum, dispatch] = useReducer(museumReducer, {
     selectedArtwork: {},
     status: "loading",
-    currSwatches: [],
     currExploreParam: "color",
-    exploreColors: [],
-    filterByColor: [],
-    exploreDepts: [],
-    filterByDept: [],
+    availSwatches: [],
+    availDepts: [],
+    currSwatches: [],
     searchResults: [],
     favArtworks: [],
   });
@@ -39,8 +38,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/explore" element={<Explore />} />
-              <Route path="/explore/color" element={<ExploreByColor />} />
-              <Route path="/explore/dept" element={<ExploreByDepartment />} />
+              <Route path="/explore/:code" element={<ExploreBy />} />
               <Route path="/details/:code" element={<ObjectDetails />} />
               <Route path="/favs" element={<Favs />} />
               <Route path="/curate" element={<Curate />} />
