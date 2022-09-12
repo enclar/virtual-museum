@@ -22,6 +22,7 @@ const App = () => {
     selectedArtwork: {},
     status: "loading",
     currSwatches: [],
+    currExploreParam: "color",
     exploreColors: [],
     filterByColor: [],
     exploreDepts: [],

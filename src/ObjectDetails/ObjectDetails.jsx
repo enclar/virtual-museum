@@ -83,6 +83,10 @@ const ObjectDetails = () => {
                             id="like-btn"
                             onClick={() => dataContext.dispatch({type: "ADD_TO_FAVS", value: artwork})}
                         >LIKE</button>
+                        <Link
+                            id="back-btn"
+                            to={`/explore/${dataContext.museum.currExploreParam}`}
+                        >BACK</Link>
                     </div>
                 </div>
             </div>

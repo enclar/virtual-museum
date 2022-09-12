@@ -7,6 +7,9 @@ const museumReducer = (state, action) => {
         // ObjectDetails.jsx
         case "GET_ARTWORK_SWATCHES":
             return ({...state, currSwatches: action.value})
+        // Explore.jsx
+        case "EXPLORE_BY":
+            return ({...state, currExploreParam: action.value})
         // ExploreByColor.jsx
         case "EXPLORE_BY_COLOR":
             return ({...state, exploreColors: action.value})

@@ -8,7 +8,7 @@ import Results from "../Results/Results";
 const ExploreByColor = () => {
 
     const dataContext = useContext(DataContext);
-    console.log("dataContext:", dataContext);
+    // console.log("dataContext:", dataContext);
 
     // Loading available color swatches during initial load using useEffect
     useEffect(() => {

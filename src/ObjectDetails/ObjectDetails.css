@@ -42,9 +42,9 @@
     border-left-color: #eed;
     border-right-color: #eed;
     border-top-color: #ccb;
-    max-height: 100%;
+    /* max-height: 100%;
     max-width: 100%;
-    min-width: 300px;
+    min-width: 300px; */
 }
 
 #frame {
@@ -132,4 +132,14 @@ h3 > span.not-avail {
 .swatch {
     width: 40px;
     height: 40px;
+}
+
+#buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#back-btn {
+    background: grey;
+    color: black;
 }
