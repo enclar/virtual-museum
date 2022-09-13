@@ -1,3 +1,5 @@
+//! Maps out the different departments the museum is categorized into
+
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../App";
@@ -21,13 +23,6 @@ const ExploreByDepartment = () => {
                 const data = await response.json();
 
                 dataContext.dispatch({type: "FETCH_DEPTS", value: data.departments})
-            
-                // Fetching the search results from the first available department
-                dataContext.dispatch({type: "LOADING", value: "loading"})
-                const responseOne = await fetch ("https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&department_id=35347493&page=1&per_page=30");
-                const dataOne = await responseOne.json();
-                dataContext.dispatch({type: "LOADING", value: "done"});
-                dataContext.dispatch({type: "FILTER_ART", value: dataOne.objects});
             }
 
             catch (error) {

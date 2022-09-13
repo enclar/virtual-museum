@@ -1,3 +1,5 @@
+//! Maps out the various options to search for within the selected param (eg. color/departments)
+
 import { useContext, useEffect } from "react";
 import { DataContext } from "../../App";
 
