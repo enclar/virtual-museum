@@ -45,6 +45,7 @@ const ExploreBy = () => {
         <div id="explore-by">
             <div id="params">{exploreParams}</div>
             {chosenExploreParam}
+            <Results />
         </div>
     );
 };
