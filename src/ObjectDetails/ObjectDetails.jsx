@@ -60,7 +60,7 @@ const ObjectDetails = () => {
     // Mapping out the participants
     const participants = artwork.participants.map((ele, index) => {
         return (
-            <h3>{ele.role_display_name} {ele.person_name}</h3>
+            <h3 key={index}>{ele.role_display_name} {ele.person_name}</h3>
         );
     });
 
@@ -69,7 +69,9 @@ const ObjectDetails = () => {
     return (
         <div id="obj-details">
 
-            <h1 id="title">{artwork.title_raw}</h1>
+            <h1 id="title">
+                {artwork.title_raw == "" || artwork.title_raw == null ? artwork.title : artwork.title_raw }
+            </h1>
 
             <div id="container">
                 <div id="frame">
@@ -117,10 +119,7 @@ const ObjectDetails = () => {
                             id="like-btn"
                             onClick={() => dataContext.dispatch({type: "ADD_TO_FAVS", value: artwork})}
                         >LIKE</button>
-                        <Link
-                            id="back-btn"
-                            to="/explore"
-                        >BACK</Link>
+                        <Link id="back-btn" to="/explore">BACK</Link>
                     </div>
                 </div>
             </div>

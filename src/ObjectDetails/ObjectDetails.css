@@ -25,12 +25,13 @@
     color: white;
     padding: 18px 30px 10px 30px;
     font-size: 40px;
-    box-shadow: 2px 5px 10px #005f73;
+    box-shadow: 5px 5px #005f73;
 }
 
 #container {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 50px;
     margin: 30px 0 0 0;
     width: 70%;
@@ -136,10 +137,19 @@ h3 > span.not-avail {
 
 #buttons {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
-#back-btn {
-    background: grey;
-    color: black;
+#back-btn, #like-btn {
+    width: 75px;
+    height: 30px;
+    border: none;
+    background: #9b2226;
+    border-radius: 5px;;
+    color: white;
+    font-family: ch-semibold;
+    font-size: 15px;
+    text-align: center;
+    line-height: 220%;
+    margin-top: 20px;
 }

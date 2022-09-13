@@ -23,7 +23,7 @@ const Explore = () => {
             <ExploreParams />
             <ParamOptions />
 
-            <Results />
+            {dataContext.museum.currExploreParam == null ? <div></div> : <Results />}
         </div>
     );
 };
