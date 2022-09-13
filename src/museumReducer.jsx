@@ -42,12 +42,3 @@ const museumReducer = (state, action) => {
 };
 
 export default museumReducer;
-
-/*
-//! ExploreByColor.jsx
-case "EXPLORE_BY_COLOR":
-    return ({...state, exploreColors: action.value})
-//! ExploreByDepartment.jsx
-case "EXPLORE_BY_DEPT":
-    return ({... state, exploreDepts: action.value})
-*/

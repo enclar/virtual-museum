@@ -6,8 +6,10 @@ import "./Explore.css";
 import params from "./exploreParams";
 
 const Explore = () => {
+    // Importing the context provided in App.jsx
     const dataContext = useContext(DataContext);
 
+    // Mapping out the params which users can use to explore the artworks
     const exploreParams = params.map((ele, index) => {
         return (
             <Link
@@ -25,7 +27,7 @@ const Explore = () => {
                 <h1>EXPLORE</h1>
                 <h3>explore our collection of digitized exhibits at your own leisure</h3>
             </div>
-            <div id="explore-container">
+            <div id="param-container">
                 {exploreParams}
             </div>
         </div>

@@ -13,27 +13,16 @@ const Results = () => {
     console.log(dataContext);
 
     const results = searchResults.map((ele, index) => {
-        if (dataContext.museum.currExploreParam === "video") {
-            return (
-                <iframe
-                    className="artwork-video"
-                    title={ele.title}
-                    src={ele.formats.mp4["720"]}
-                    // onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
+        return (
+            <Link className="artwork" to={`/details/${ele.id}`} key={index}>
+                <img
+                    className="artwork"
+                    alt={ele?.title}
+                    src={ele?.images[0]?.b?.url}
+                    onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
                 />
-            );    
-        } else {
-            return (
-                <Link className="artwork" to={`/details/${ele.id}`} key={index}>
-                    <img
-                        className="artwork"
-                        alt={ele?.title}
-                        src={ele?.images[0]?.b?.url}
-                        onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
-                    />
-                </Link>
-            );      
-        }      
+            </Link>
+        );      
     });
 
     return (

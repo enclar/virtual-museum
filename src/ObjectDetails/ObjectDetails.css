@@ -92,7 +92,8 @@
 }
 
 #description > h2,
-#details > h2 {
+#details > h2,
+#participants > h2 {
     background: #005f73;
     width: fit-content;
     height: 40px;

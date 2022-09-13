@@ -38,10 +38,38 @@ const ObjectDetails = () => {
         );
     });
 
+    // Function to check if gallery text or description should be displayed
+    const getDescription = () => {
+        if (artwork.gallery_text == null) {
+            if (artwork.description == null) {
+                return (
+                    <span className="not-avail">Description not available</span>
+                )
+            } else {
+                return (
+                    artwork.description
+                )
+            }
+        } else {
+            return (
+                artwork.gallery_text
+            );
+        };
+    };
+
+    // Mapping out the participants
+    const participants = artwork.participants.map((ele, index) => {
+        return (
+            <h3>{ele.role_display_name} {ele.person_name}</h3>
+        );
+    });
+
+    const description = getDescription();
+
     return (
         <div id="obj-details">
 
-            <h1 id="title">{artwork?.title}</h1>
+            <h1 id="title">{artwork.title_raw}</h1>
 
             <div id="container">
                 <div id="frame">
@@ -52,20 +80,25 @@ const ObjectDetails = () => {
 
                     <div id="description">
                         <h2>DESCRIPTION</h2>
-                        <h3>{artwork?.description == null ? <span className="not-avail">Description not available</span> : artwork.description}</h3>
+                        <h3>{description}</h3>
                     </div>
 
                     <div id="details">
                         <h2>DETAILS</h2>
                         <h3>
+                            <span className="category">Year of Acquisition</span>
+                            < br />
+                            {artwork.year_acquired == null ? <span className="not-avail">Date of Acquisition not available</span> : artwork.year_acquired}
+                        </h3>
+                        <h3>
                             <span className="category">Dimensions</span>
                             < br />
-                            {artwork?.dimensions == null ? <span className="not-avail">Dimensions not available</span> : artwork.dimensions}
+                            {artwork.dimensions == null ? <span className="not-avail">Dimensions not available</span> : artwork.dimensions}
                         </h3>
                         <h3>
                             <span className="category">Medium</span>
                             < br />
-                            {artwork?.medium == null ? <span className="not-avail">Media Type not available</span> : artwork.medium}
+                            {artwork.medium == null ? <span className="not-avail">Media Type not available</span> : artwork.medium}
                         </h3>
                         <h3>
                             <span className="category">Colors</span>
@@ -73,10 +106,11 @@ const ObjectDetails = () => {
                             <div id="swatches">{swatches}</div>
                         </h3>
                     </div>
-                    
-                    <h3>Year of Acquisition: {artwork?.year_acquired} </h3>
-                    <br />
-                    <h3 id="credit-line">{artwork?.creditline}</h3>
+
+                    <div id="participants">
+                        <h2>PARTICIPANTS</h2>
+                        <div>{participants}</div>
+                    </div>
 
                     <div id="buttons">
                         <button
