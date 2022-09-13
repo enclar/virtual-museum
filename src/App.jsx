@@ -22,7 +22,7 @@ const App = () => {
   const [museum, dispatch] = useReducer(museumReducer, {
     selectedArtwork: {},
     status: "loading",
-    currExploreParam: "color",
+    currExploreParam: null,
     availSwatches: [],
     availDepts: [],
     currSwatches: [],
@@ -38,8 +38,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/explore" element={<Explore />} />
-              <Route path="/explore/:code" element={<ExploreBy />} />
-              <Route path="/details/:code" element={<ObjectDetails />} />
+              <Route path="/explore/:code" element={<ObjectDetails />} />
               <Route path="/favs" element={<Favs />} />
               <Route path="/curate" element={<Curate />} />
               <Route path="/plan" element={<PlanYourVisit />} />

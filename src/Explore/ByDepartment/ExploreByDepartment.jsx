@@ -69,10 +69,7 @@ const ExploreByDepartment = () => {
 
     return (
         <div id="by-dept">
-            <h1>EXPLORE BY DEPARTMENT</h1>
-            <div id="dept-container">
-                {depts}
-            </div>
+            {depts}
         </div>
     );
 };

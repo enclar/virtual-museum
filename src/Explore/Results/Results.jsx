@@ -10,19 +10,20 @@ const Results = () => {
 
     // Saving the result array into a variable
     const searchResults = dataContext.museum.searchResults;
-    console.log(dataContext);
 
     const results = searchResults.map((ele, index) => {
-        return (
-            <Link className="artwork" to={`/details/${ele.id}`} key={index}>
-                <img
-                    className="artwork"
-                    alt={ele?.title}
-                    src={ele?.images[0]?.b?.url}
-                    onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
-                />
-            </Link>
-        );      
+        if (searchResults != []) {
+            return (
+                <Link className="artwork" to={`/explore/${ele.id}`} key={index}>
+                    <img
+                        className="artwork"
+                        alt={ele?.title}
+                        src={ele?.images[0]?.b?.url}
+                        onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
+                    />
+                </Link>
+            );  
+        }    
     });
 
     return (

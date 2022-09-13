@@ -13,8 +13,9 @@
     flex-direction: column;
     align-items: center;
     margin: 0;
-    background-color: #e9d8a6;
-    height: 100vh;
+    background-color: aliceblue;
+    min-height: 100vh;
+    height: fit-content;
 }
 
 #explore-title {
@@ -43,15 +44,18 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    margin: 50px;
+    margin: 20px;
 }
 
-.explore-cat {
+.explore-param {
     width: 200px;
-    height: 100px;
-    font-family: ch-semibold;
-    font-size: 25px;
+    height: 40px;
     text-align: center;
-    line-height: 425%;
+    line-height: 200%;
+    font-family: ch-semibold;
+    font-size: 23px;
     background-color: maroon;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
 }

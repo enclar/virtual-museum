@@ -119,7 +119,7 @@ const ObjectDetails = () => {
                         >LIKE</button>
                         <Link
                             id="back-btn"
-                            to={`/explore/${dataContext.museum.currExploreParam}`}
+                            to="/explore"
                         >BACK</Link>
                     </div>
                 </div>

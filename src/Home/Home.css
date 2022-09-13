@@ -12,8 +12,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 50px;
     margin: 0;
-    background: center / cover no-repeat url("../images/home-background.png"), #005f73;
+    background: center / cover no-repeat url("../images/home-background.png"), rgb(0, 0, 50);
     height: 100vh;
 }
 
@@ -26,7 +27,7 @@
 #welcome {
     font-family: newyork;
     color: aliceblue;
-    margin: 75px 0 0 0;
+    margin: 50px 0 0 0;
 }
 
 #ch {
@@ -36,7 +37,7 @@
     text-justify: inter-ideograph;
     letter-spacing: 3px;
     line-height: 100%;
-    margin: 50px 0 0 0;
+    margin: 0;
     color: #9b2226;
     -webkit-text-stroke-width: 2.5px;
     -webkit-text-stroke-color: aliceblue;
@@ -50,14 +51,14 @@
     background-color: aliceblue;
     width: 3px;
     height: 75px;
-    margin-top: 50px;
+    margin: 0;
 }
 
 #online {
     font-size: 60px;
     font-family: newyork;
     color: #ca6702;
-    margin: 50px 0 0 0;
+    margin: 0;
     text-shadow: 2px 2px aliceblue;
 }
 
@@ -65,7 +66,7 @@
     font-size: 30px;
     font-family: newyork;
     color: #94d2bd;
-    margin: 120px 0 0 0;
+    margin: 0;
     text-align: center;
     letter-spacing: 3px;
 }

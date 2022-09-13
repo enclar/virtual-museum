@@ -66,7 +66,6 @@ const ExploreByColor = () => {
 
     return (
         <div id="by-color">
-            <h1>EXPLORE BY COLOR</h1>
             <div id="swatch-container">
                 {swatches}
             </div>

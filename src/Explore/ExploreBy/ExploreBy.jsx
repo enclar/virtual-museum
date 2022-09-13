@@ -14,6 +14,7 @@ const ExploreBy = () => {
     const dataContext = useContext(DataContext);
     const searchParams = dataContext.museum.currExploreParam;
 
+    /*
     // Mapping the available search params at the top of the page
     //! To be replaced with breadcrumbs if time permits (Week 13)
     const exploreParams = params.map((ele, index) => {
@@ -26,6 +27,7 @@ const ExploreBy = () => {
             >{ele.name}</Link>
         );
     });
+    */
 
     // Function to check what is the requested Explore Param (color/dept/video etc.) and return the corresponding component
     const getExploreParam = (param) => {
@@ -43,7 +45,7 @@ const ExploreBy = () => {
 
     return (
         <div id="explore-by">
-            <div id="params">{exploreParams}</div>
+            {/* <div id="params">{exploreParams}</div> */}
             {chosenExploreParam}
             <Results />
         </div>
