@@ -1,4 +1,4 @@
-//! Maps out the categories which the user can explore via
+//! Maps out the categories which the user can use to explore
 
 import { useContext } from "react";
 import { DataContext } from "../../App";
@@ -9,8 +9,7 @@ const ExploreParams = () => {
     const dataContext = useContext(DataContext);
 
     // Setting up function to handle click
-    const handleParamSelection = async (ele) => {
-        
+    const handleParamSelection = async (ele) => {        
         // Getting the search params
         dataContext.dispatch({type: "EXPLORE_BY", value: ele.link});
 

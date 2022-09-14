@@ -1,6 +1,5 @@
 //! Maps out the various options to search for within the selected param (eg. color swatches/departments)
-
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { DataContext } from "../../App";
 
 import ExploreByColor from "../ByColor/ExploreByColor";
@@ -20,7 +19,7 @@ const ParamOptions = () => {
                 return <ExploreByColor />
             } else if (param == "dept") {
                 return <ExploreByDepartment />
-            };
+            }
         };
     };
 
