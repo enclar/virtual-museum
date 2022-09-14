@@ -19,7 +19,10 @@ const Results = () => {
                         className="artwork"
                         alt={ele?.title}
                         src={ele?.images[0]?.b?.url}
-                        onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
+                        onClick={() => {
+                            dataContext.dispatch({type: "SWITCH_IMAGE", value: 0})
+                            dataContext.dispatch({type: "VIEW_DETAILS", value: ele})
+                        }}
                     />
                 </Link>
             );  

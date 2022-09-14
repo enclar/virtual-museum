@@ -25,6 +25,7 @@ const App = () => {
     currSwatches: [],
     searchResults: [],
     favArtworks: [],
+    imageIndex: 0
   });
 
   return (

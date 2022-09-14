@@ -1,12 +1,33 @@
+//! Component to display the details of a selected object - can be accessed from explore or favs
+
 import React, { ReactFragment, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../App";
 import "./ObjectDetails.css";
 
 const ObjectDetails = () => {
+    // Importing the context
     const dataContext = useContext(DataContext);
     const artwork = dataContext.museum.selectedArtwork;
     console.log("Artwork Details:", artwork);
+
+    // Function to check if gallery text, description or NOT AVAIL should be displayed
+    const getDescription = () => {
+        if (artwork.gallery_text == null) {
+            if (artwork.description == null) {
+                return (
+                    <span className="not-avail">Description not available</span>
+                )
+            } else {
+                return artwork.description
+            }
+        } else {
+            return artwork.gallery_text
+        };
+    };
+
+    // Calling the function to get the description
+    const description = getDescription();
 
     // Getting the main colors of the artwork
     useEffect(() => {
@@ -38,25 +59,6 @@ const ObjectDetails = () => {
         );
     });
 
-    // Function to check if gallery text or description should be displayed
-    const getDescription = () => {
-        if (artwork.gallery_text == null) {
-            if (artwork.description == null) {
-                return (
-                    <span className="not-avail">Description not available</span>
-                )
-            } else {
-                return (
-                    artwork.description
-                )
-            }
-        } else {
-            return (
-                artwork.gallery_text
-            );
-        };
-    };
-
     // Mapping out the participants
     const participants = artwork.participants.map((ele, index) => {
         return (
@@ -64,7 +66,17 @@ const ObjectDetails = () => {
         );
     });
 
-    const description = getDescription();
+    // Generating image thumbnails
+    const thumbnails = artwork.images.map((ele, index) => {
+        return (
+            <img
+                src={ele.sq.url}
+                key={index}
+                className="thumbnail"
+                onClick={() => dataContext.dispatch({type: "SWITCH_IMAGE", value: index})}
+            />
+        );
+    });
 
     return (
         <div id="obj-details">
@@ -74,8 +86,11 @@ const ObjectDetails = () => {
             </h1>
 
             <div id="container">
-                <div id="frame">
-                    <img id="img" src={artwork?.images[0]?.z?.url} alt="artwork" />
+                <div id="obj-imgs">
+                    <div id="frame">
+                        <img id="img" src={artwork?.images[dataContext.museum.imageIndex]?.z?.url} alt="artwork" />
+                    </div>
+                    <div id="thumbnails">{thumbnails}</div>
                 </div>
 
                 <div id="artwork-info">

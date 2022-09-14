@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../App";
 import "./Explore.css";
 
-import ExploreParams from "./ExploreParams/ExploreParams";
-import ParamOptions from "./ExploreParams/ParamOptions";
+import ExploreParams from "./ExploreParams&Options/ExploreParams";
+import ParamOptions from "./ExploreParams&Options/ParamOptions";
 import Results from "./Results/Results";
 
 const Explore = () => {

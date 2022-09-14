@@ -38,6 +38,11 @@ const museumReducer = (state, action) => {
         // Returning a list of swatches for a particular artwork
         case "GET_ARTWORK_SWATCHES":
             return ({...state, currSwatches: action.value})
+
+        //! ObjectsDetails.jsx
+        // Called when user wants to view another image
+        case "SWITCH_IMAGE":
+            return ({...state, imageIndex: action.value})
     };
 };
 

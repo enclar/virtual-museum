@@ -40,7 +40,7 @@ const ExploreByColor = () => {
         );
     });
 
-    // Choosing a color and searching for corresponding artworks
+    // onClick function to search for artworks based on selected color
     const getResultByColor = async (color) => {
         const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.search.objects&access_token=4845918c6c961dd37cbb22942d5c2ec8&color=" + color.substr(1) + "&page=1&per_page=30";
 
