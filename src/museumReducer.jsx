@@ -43,6 +43,11 @@ const museumReducer = (state, action) => {
         // Called when user wants to view another image
         case "SWITCH_IMAGE":
             return ({...state, imageIndex: action.value})
+
+        //! Videos.jsx
+        // Called when user clicks on the video page
+        case "EXPLORE_VIDEOS":
+            return ({...state, videos: action.value})
     };
 };
 

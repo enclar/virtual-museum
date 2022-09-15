@@ -9,7 +9,8 @@ import Layout from "./NavBar/Layout";
 import Explore from "./Explore/Explore";
 import ObjectDetails from "./ObjectDetails/ObjectDetails";
 import Favs from "./Favs/Favs";
-import Curate from "./Curate/Curate";
+import Videos from "./Videos/Videos";
+import VideoDetails from "./VideoDetails/VideoDetails";
 import PlanYourVisit from "./Plan/PlanYourVisit";
 
 export const DataContext = createContext();
@@ -25,7 +26,8 @@ const App = () => {
     currSwatches: [],
     searchResults: [],
     favArtworks: [],
-    imageIndex: 0
+    imageIndex: 0,
+    videos: []
   });
 
   return (
@@ -39,7 +41,8 @@ const App = () => {
               <Route path="/explore/:code" element={<ObjectDetails />} />
               <Route path="/favs" element={<Favs />} />
               <Route path="/favs/:code" element={<ObjectDetails />} />
-              <Route path="/curate" element={<Curate />} />
+              <Route path="/videos" element={<Videos />} />
+              <Route path="/videos/:code" element={<VideoDetails />} />
               <Route path="/plan" element={<PlanYourVisit />} />
             </Route>
           </Routes>
