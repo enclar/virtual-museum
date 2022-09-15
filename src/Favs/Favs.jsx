@@ -12,7 +12,7 @@ const Favs = () => {
     const favs = favArtworks.map((ele, index) => {
         if (favArtworks !== [] && ele.id !== null) {
             return (
-                <Link className="artwork" to={`/details/${ele.id}`} key={index}>
+                <Link className="artwork" to={`/favs/${ele.id}`} key={index}>
                     <img
                         className="artwork"
                         alt={ele?.title}
