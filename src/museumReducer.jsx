@@ -47,7 +47,12 @@ const museumReducer = (state, action) => {
         //! Videos.jsx
         // Called when user clicks on the video page
         case "EXPLORE_VIDEOS":
-            return ({...state, videos: action.value})
+            return ({...state, videoList: action.value})
+
+        //! Videos.jsx
+        // Called when user wants to change page
+        case "SWITCH_PAGE":
+            return({...state, pagination: action.value})
     };
 };
 

@@ -58,3 +58,19 @@ h1.video {
     font-family: ch-semibold;
     font-size: 20px;
 }
+
+#input {
+    border: 2px solid greenyellow;
+}
+
+#pages {
+    font-family: ch-semibold;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pagenum:hover {
+    color:rgb(172, 59, 59);
+    cursor: pointer;
+}

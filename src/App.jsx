@@ -27,7 +27,8 @@ const App = () => {
     searchResults: [],
     favArtworks: [],
     imageIndex: 0,
-    videos: []
+    videoList: [],
+    pagination: {current: "1", total: []}
   });
 
   return (

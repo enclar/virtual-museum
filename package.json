@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/base": "^5.0.0-alpha.97",
+    "@mui/material": "^5.10.5",
     "eslint": "^8.23.0",
     "lozad": "^1.16.0",
     "react": "^18.2.0",
