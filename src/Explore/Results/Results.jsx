@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../App";
+import lozad from "lozad";
 
 import "./Results.css";
+import Pagination from "../../Pagination/Pagination";
 
 const Results = () => {
     // Importing data from App
@@ -33,6 +35,7 @@ const Results = () => {
         <div id="results">
             <h3>click thumbnail to view detailed artwork and description</h3>
             {dataContext.museum.status == "loading" ? <progress /> : <div id="img-container">{results}</div>}
+            <Pagination />
         </div>
     );
 };

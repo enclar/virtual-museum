@@ -7,6 +7,8 @@ import "./Videos.css";
 // Importing MUI components
 import { InputUnstyled } from "@mui/base";
 
+import Pagination from "../Pagination/Pagination";
+
 const Videos = () => {
     // Importing info via useContext
     const dataContext = useContext(DataContext);
@@ -60,14 +62,7 @@ const Videos = () => {
         );
     });
 
-    const pages = pageInfo.total.map((ele, index) => {
-        return (
-            <h2 
-                className="pagenum"
-                onClick={() => dataContext.dispatch({type: "SWITCH_PAGE", value: {...pageInfo, current: ele}})}
-            >{ele}</h2>
-        );
-    });
+
         
     return (
         <div id="videos">
@@ -75,7 +70,7 @@ const Videos = () => {
             <div id="vid-container">
                 {dataContext.museum.status == "loading" ? <progress /> : vids}
             </div>
-            <div id="pages">{pages}</div>
+            <Pagination id="pages" />
         </div>
     );
 };

@@ -29,4 +29,5 @@ progress {
     object-fit: cover;
     color: navy;
     text-align: center;
+    background-color: rgb(172, 59, 59, 0.5);
 }
