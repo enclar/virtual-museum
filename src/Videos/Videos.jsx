@@ -1,5 +1,6 @@
 import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import urlcat from "urlcat";
 import { DataContext } from "../App";
 import "./Videos.css";
 
@@ -10,7 +11,12 @@ const Videos = () => {
     // Pulling the video results when page loads
     useEffect(() => {
         const getVideos = async () => {
-            const url = "https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.videos.getList&access_token=4845918c6c961dd37cbb22942d5c2ec8&page=1&per_page=50";
+            const url = urlcat ("https://api.collection.cooperhewitt.org/rest/", {
+                method: "cooperhewitt.videos.getList",
+                access_token: "4845918c6c961dd37cbb22942d5c2ec8",
+                page: "1",
+                per_page: "20",
+            });
 
             try {
                 dataContext.dispatch({type: "LOADING", value: "loading"});
