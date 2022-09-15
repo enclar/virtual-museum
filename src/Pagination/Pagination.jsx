@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DataContext } from "../App";
+import "./Pagination.css";
 
 const Pagination = () => {
     const dataContext = useContext(DataContext);
