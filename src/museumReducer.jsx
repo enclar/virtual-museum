@@ -58,11 +58,6 @@ const museumReducer = (state, action) => {
         // Called to update filter options
         case "GET_FILTER_OPTIONS":
             return({...state, filterOptions: action.value})
-        
-        //! Filters.jsx
-        // Called when a filter is selected
-        case "SET_FILTER_OPTION":
-            return ({...state, filterOption: action.value})
     }
 };
 

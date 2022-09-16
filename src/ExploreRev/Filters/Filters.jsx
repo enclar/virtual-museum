@@ -20,6 +20,12 @@ const DeptFilter = () => {
         )
     });
 
+    const periods = filterOptions.periods.map((ele) => {
+        return (
+            <option value={ele.name} key={ele.id} />
+        )
+    });
+
     return (
         <div id="filters">
 
@@ -28,9 +34,14 @@ const DeptFilter = () => {
                 {colors}
             </datalist>
 
-            <input list="depts" />
+            <input list="depts" placeholder="Department" />
             <datalist id="depts">
                 {depts}
+            </datalist>
+
+            <input list="periods" placeholder="Period" />
+            <datalist id="periods">
+                {periods}
             </datalist>
         
         </div>

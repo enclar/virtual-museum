@@ -30,8 +30,7 @@ const App = () => {
     imageIndex: 0,
     videoList: [],
     pagination: {current: "1", total: []},
-    filterOptions: {swatches: [], depts: []},
-    filterOption: {swatch: "", dept: {}}
+    filterOptions: {swatches: [], depts: [], periods: []},
   });
 
   // Upon loading app, pre-load all the filter data
@@ -48,7 +47,14 @@ const App = () => {
       access_token: "4845918c6c961dd37cbb22942d5c2ec8",
       page: "1",
       per_page: "5"
-    })
+    });
+
+    const periodURL = urlcat("https://api.collection.cooperhewitt.org/rest/", {
+      method: "cooperhewitt.periods.getList",
+      access_token: "4845918c6c961dd37cbb22942d5c2ec8",
+      page: "1",
+      per_page: "100"
+    });
 
     try {
       const colorResponse = await fetch(colorURL);
@@ -57,9 +63,12 @@ const App = () => {
       const deptResponse = await fetch(deptURL);
       const deptData = await deptResponse.json();
 
+      const periodResponse = await fetch(periodURL);
+      const periodData = await periodResponse.json();
+
       dispatch({
         type: "GET_FILTER_OPTIONS",
-        value: {swatches: Object.keys(colorData.colors), depts: deptData.departments}
+        value: {swatches: Object.keys(colorData.colors), depts: deptData.departments, periods: periodData.periods}
       });
     }
 
