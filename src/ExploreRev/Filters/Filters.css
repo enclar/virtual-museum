@@ -1,20 +1,32 @@
+@font-face {
+    font-family: newyork;
+    src: url("./fonts/newyork.otf");
+}
+
+@font-face {
+    font-family: ch-semibold;
+    src: url("./fonts/ch-semibold.otf");
+}
+
 #filters {
+    font-family: ch-semibold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#preset {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-datalist {
-    position: absolute;
-    max-height: 20em;
-    border: 0 none;
-    overflow-x: hidden;
-    overflow-y: auto;
+#search {
+    width: 484px;
 }
-  
-datalist > option {
-    font-size: 0.8em;
-    padding: 0.3em 1em;
-    background-color: #ccc;
-    cursor: pointer;
+
+#submit-btn, #clear-btn {
+    width: 100px;
+    margin-top: 10px;
 }

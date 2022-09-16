@@ -9,7 +9,7 @@ const ObjectDetails = () => {
     // Importing the context
     const dataContext = useContext(DataContext);
     const artwork = dataContext.museum.selectedArtwork;
-    console.log("Artwork Details:", artwork);
+    // console.log("Artwork Details:", artwork);
 
     // Function to check if gallery text, description or NOT AVAIL should be displayed
     const getDescription = () => {
@@ -73,7 +73,10 @@ const ObjectDetails = () => {
                 src={ele.sq.url}
                 key={index}
                 className="thumbnail"
-                onClick={() => dataContext.dispatch({type: "SWITCH_IMAGE", value: index})}
+                onClick={() => {
+                    dataContext.dispatch({type: "SWITCH_IMAGE", value: index});
+                    console.log("change image");
+                }}
             />
         );
     });
