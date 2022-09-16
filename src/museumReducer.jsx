@@ -1,7 +1,7 @@
 const museumReducer = (state, action) => {
     switch (action.type) {
         //! Results.jsx & Favs.jsx
-        // Called when user wants to view the details of a selected artwork - Value is an artwork ID
+        // Called when user wants to view the details of a selected artwork - Value is all the details of a chosen artwork/video
         case "VIEW_DETAILS":
             return ({...state, selectedArtwork: action.value})
         
@@ -53,7 +53,17 @@ const museumReducer = (state, action) => {
         // Called when user wants to change page
         case "SWITCH_PAGE":
             return({...state, pagination: action.value})
-    };
+        
+        //! App.jsx
+        // Called to update filter options
+        case "GET_FILTER_OPTIONS":
+            return({...state, filterOptions: action.value})
+        
+        //! Filters.jsx
+        // Called when a filter is selected
+        case "SET_FILTER_OPTION":
+            return ({...state, filterOption: action.value})
+    }
 };
 
 export default museumReducer;

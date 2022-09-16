@@ -1,12 +1,13 @@
-import React, { useState, useReducer, createContext } from "react";
+import React, { useState, useReducer, createContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import urlcat from "urlcat";
 import museumReducer from "./museumReducer";
 import "./App.css";
 
 // Importing Components
 import Home from "./Home/Home";
 import Layout from "./NavBar/Layout";
-import Explore from "./Explore/Explore";
+import ExploreRev from "./ExploreRev/ExploreRev";
 import ObjectDetails from "./ObjectDetails/ObjectDetails";
 import Favs from "./Favs/Favs";
 import Videos from "./Videos/Videos";
@@ -28,8 +29,47 @@ const App = () => {
     favArtworks: [],
     imageIndex: 0,
     videoList: [],
-    pagination: {current: "1", total: []}
+    pagination: {current: "1", total: []},
+    filterOptions: {swatches: [], depts: []},
+    filterOption: {swatch: "", dept: {}}
   });
+
+  // Upon loading app, pre-load all the filter data
+  useEffect(() => {
+    const getFilterOptions = async () => {
+      const colorURL = urlcat("https://api.collection.cooperhewitt.org/rest/", {
+        method: "cooperhewitt.colors.palettes.getInfo",
+        access_token: "4845918c6c961dd37cbb22942d5c2ec8",
+        palette: "crayola"
+      });
+
+    const deptURL = urlcat("https://api.collection.cooperhewitt.org/rest/", {
+      method: "cooperhewitt.departments.getList",
+      access_token: "4845918c6c961dd37cbb22942d5c2ec8",
+      page: "1",
+      per_page: "5"
+    })
+
+    try {
+      const colorResponse = await fetch(colorURL);
+      const colorData = await colorResponse.json();
+
+      const deptResponse = await fetch(deptURL);
+      const deptData = await deptResponse.json();
+
+      dispatch({
+        type: "GET_FILTER_OPTIONS",
+        value: {swatches: Object.keys(colorData.colors), depts: deptData.departments}
+      });
+    }
+
+    catch (error) {
+      console.log(error)
+    }
+  };
+
+  getFilterOptions();
+  }, []);
 
   return (
     <div id="app">
@@ -38,7 +78,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
-              <Route path="/explore" element={<Explore />} />
+              <Route path="/explore" element={<ExploreRev />} />
               <Route path="/explore/:code" element={<ObjectDetails />} />
               <Route path="/favs" element={<Favs />} />
               <Route path="/favs/:code" element={<ObjectDetails />} />

@@ -4,9 +4,6 @@ import urlcat from "urlcat";
 import { DataContext } from "../App";
 import "./Videos.css";
 
-// Importing MUI components
-import { InputUnstyled } from "@mui/base";
-
 import Pagination from "../Pagination/Pagination";
 
 const Videos = () => {
