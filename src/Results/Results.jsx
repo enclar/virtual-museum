@@ -66,7 +66,7 @@ const Results = () => {
     return (
         <div id="results">
             <h3>
-                {dataContext.museum.searchResults != [] ? "click to view detailed artwork and description" : "no artwork available"}
+                {dataContext.museum.searchResults != [] ? "CLICK: to view detailed artwork and description" : "no artwork available"}
             </h3>
             <div id="result-container">
                 {dataContext.museum.status == "loading" ? <progress /> : <div id="img-container">{artworks}</div>}
