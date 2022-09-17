@@ -1,0 +1,44 @@
+/* @font-face {
+    font-family: ch-semibold;
+    src: url("../../fonts/ch-semibold.otf");
+} */
+
+#filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+#preset-filters {
+    display: flex;
+    gap: 15px;
+}
+
+#preset-filters > input {
+    background: lightgoldenrodyellow;
+    border: none;
+    padding: 5px 10px 2.5px;
+    height: 25px;
+    font-family: ch-semibold;
+}
+
+#preset-filters > input:focus {
+    background: goldenrod;
+}
+
+#search-btn {
+    background: rgb(172, 59, 59);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px 2.5px;
+    width: 100px;
+    height: 30px;
+    font-family: ch-semibold;
+}
+
+#search-btn:hover {
+    background: goldenrod;
+    color: navy;
+}

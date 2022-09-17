@@ -2,19 +2,19 @@ import React, { useContext, useRef, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { useSearchParams } from "react-router-dom";
 import urlcat from "urlcat";
-import { DataContext } from "../../App";
-
-import "./Filters.css";
+import { DataContext } from "../App";
 
 const Filters = () => {
     // Importing context
     const dataContext = useContext(DataContext);
     const filterOptions = dataContext.museum.filterOptions; // Object containing arrays of the options for each category (color/dept/period)
+    const pageInfo = dataContext.museum.pagination;
 
     // Setting up input ref
     const inputRefPeriod = useRef();
     const inputRefColor = useRef();
     const inputRefDept = useRef();
+    const inputRefDisplay = useRef();
 
     // Setting up Search Params
     const [searchParams, setSearchParams] = useSearchParams()
@@ -24,13 +24,14 @@ const Filters = () => {
     const period = searchParams.get("period");
     const department_id = searchParams.get("department_id");
     const on_display = searchParams.get("on_display") || false;
+    const page = searchParams.get("page") || "1";
 
     // Function to fetch filtered artworks every time new filter is implemented
     const getArtworks = async () => {
         const url = urlcat("https://api.collection.cooperhewitt.org/rest/", {
             method: "cooperhewitt.search.objects",
             access_token: "4845918c6c961dd37cbb22942d5c2ec8",
-            page: "1",
+            page,
             per_page: "30",
             color,
             period,
@@ -44,7 +45,14 @@ const Filters = () => {
             const data = await response.json();
             // console.log("Filtered Data:", data);
             console.log("URL:", url);
+
+            // Passing an array of artwork information
             dataContext.dispatch({type: "FILTER_ART", value: data.objects});
+
+            // Passing pagination information
+            const pageNums = Array.from({length: data.pages}, (_, i) => (i + 1).toString());
+            dataContext.dispatch({type: "SWITCH_PAGE", value: {...pageInfo, total: pageNums}});
+
             dataContext.dispatch({type: "LOADING", value: "done"});
         }
 
@@ -68,7 +76,7 @@ const Filters = () => {
 
     const depts = filterOptions.depts.map((ele) => {
         return (
-            <option value={ele.id} key={ele.id}/>
+            <option value={ele.id} key={ele.id}>{ele.name}</option>
         )
     });
 
@@ -79,22 +87,33 @@ const Filters = () => {
     });
 
     // Function to update filters when submit button is clicked
+    // const params = ["Period", "Color", "Dept"];
+
     const handleSubmit = () => {
         console.log("Period:", inputRefPeriod.current.value);
         console.log("Color:", inputRefColor.current.value);
         console.log("Dept:", inputRefDept.current.value);
 
-        const period = inputRefPeriod.current.value;
         const color = inputRefColor.current.value;
-        const department_id = inputRefDept.current.value
+        const department_id = inputRefDept.current.value;
+        const period = inputRefPeriod.current.value;
 
         if (color != "#000000") {
-            setSearchParams({ color, period, department_id });
+            setSearchParams({ color, department_id, period });
         } else {
-            setSearchParams({ period, department_id })
+            setSearchParams({ department_id, period })
         };
-
     };
+
+    // Function to handle clear
+    const handleClear = () => {
+        // Clearing existing input values
+        inputRefPeriod.current.value = "";
+        inputRefDept.current.value = "";
+        inputRefColor.current.value = "";
+
+        setSearchParams({ on_display })
+    }
 
     return (
         <div id="filters">
@@ -118,7 +137,10 @@ const Filters = () => {
             {/*<input id="search" type="search" placeholder="Search" />*/}
 
             <div id="buttons">
-                <button id="clear-btn">Clear All</button>
+                <button 
+                    id="clear-btn"
+                    onClick={handleClear}
+                >Clear All</button>
                 <button 
                     id="submit-btn"
                     onClick={handleSubmit}

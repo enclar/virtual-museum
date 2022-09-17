@@ -7,7 +7,7 @@ import "./App.css";
 // Importing Components
 import Home from "./Home/Home";
 import Layout from "./NavBar/Layout";
-import ExploreRev from "./ExploreRev/ExploreRev";
+import Explore from "./Explore/Explore";
 import ObjectDetails from "./ObjectDetails/ObjectDetails";
 import Favs from "./Favs/Favs";
 import Videos from "./Videos/Videos";
@@ -21,16 +21,18 @@ const App = () => {
   const [museum, dispatch] = useReducer(museumReducer, {
     selectedArtwork: {},
     status: "loading",
-    currExploreParam: null,
-    availSwatches: [],
-    availDepts: [],
+    // currExploreParam: null,
+    // availSwatches: [],
+    // availDepts: [],
     currSwatches: [],
     searchResults: [],
     favArtworks: [],
     imageIndex: 0,
     videoList: [],
-    pagination: {current: "1", total: []},
     filterOptions: {swatches: [], depts: [], periods: []},
+    currentFilters: {color: "", dept: "", period: "", on_display: "false"},
+    totalPages: "",
+    currPage: "1",
   });
 
   // Upon loading app, pre-load all the filter data
@@ -87,7 +89,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
-              <Route path="/explore" element={<ExploreRev />} />
+              <Route path="/explore" element={<Explore />} />
               <Route path="/explore/:code" element={<ObjectDetails />} />
               <Route path="/favs" element={<Favs />} />
               <Route path="/favs/:code" element={<ObjectDetails />} />

@@ -8,24 +8,9 @@ const museumReducer = (state, action) => {
         // Called when the load state of the API changes - Value is loading/done/error
         case "LOADING":
             return ({...state, status: action.value})
-        
-        //! Explore.jsx
-        // Called when user chooses the params they want to explore with - Value is color/dept/video
-        case "EXPLORE_BY":
-            return ({...state, currExploreParam: action.value})
 
-        //! ExploreByColor.jsx
-        // Called when component loads to pull all the available color swatches
-        case "FETCH_SWATCHES":
-            return ({...state, availSwatches: action.value})
-        
-        //! ExploreByDepartment.jsx
-        // Called when component loads to pull all the available departments
-        case "FETCH_DEPTS":
-            return ({...state, availDepts: action.value})
-
-        //! ExploreByColor.jsx & ExploreByDept.jsx
-        // Called when a color is chosen, will then be used to search for corresponding artworks
+        //! Filters.jsx
+        // Called when a filter param is chosen, will then be used to search for corresponding artworks
         case "FILTER_ART":
             return ({... state, searchResults: action.value})
         
@@ -48,17 +33,44 @@ const museumReducer = (state, action) => {
         // Called when user clicks on the video page
         case "EXPLORE_VIDEOS":
             return ({...state, videoList: action.value})
-
-        //! Videos.jsx
-        // Called when user wants to change page
-        case "SWITCH_PAGE":
-            return({...state, pagination: action.value})
         
         //! App.jsx
-        // Called to update filter options
+        // Called to update filter options (list of colors/dept/periods etc.)
         case "GET_FILTER_OPTIONS":
             return({...state, filterOptions: action.value})
+
+        //! Filters.jsx & PaginationRev.jsx
+        // Called to update the filter options which are currently in place/switch page
+        case "UPDATE_CURRENT_FILTERS":
+            return({...state, currentFilters: action.value})
+        
+        //! Results.jsx
+        // Called to update the total number of pages which the search results have
+        case "UPDATE_TOTAL_PAGES":
+            return ({...state, totalPages: action.value})
+
+        //! PaginationRev.jsx.jsx
+        // Called when user wants to change page
+        case "SWITCH_PAGE":
+            return({...state, currPage: action.value})
     }
 };
 
 export default museumReducer;
+
+/*
+//! Explore.jsx
+// Called when user chooses the params they want to explore with - Value is color/dept/video
+case "EXPLORE_BY":
+    return ({...state, currExploreParam: action.value})
+
+//! ExploreByColor.jsx
+// Called when component loads to pull all the available color swatches
+    case "FETCH_SWATCHES":
+        return ({...state, availSwatches: action.value})
+        
+//! ExploreByDepartment.jsx
+// Called when component loads to pull all the available departments
+    case "FETCH_DEPTS":
+        return ({...state, availDepts: action.value})
+*/

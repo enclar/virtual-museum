@@ -67,7 +67,6 @@ const Videos = () => {
             <div id="vid-container">
                 {dataContext.museum.status == "loading" ? <progress /> : vids}
             </div>
-            <Pagination />
         </div>
     );
 };
