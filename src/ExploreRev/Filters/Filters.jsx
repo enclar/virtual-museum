@@ -5,7 +5,6 @@ import urlcat from "urlcat";
 import { DataContext } from "../../App";
 
 import "./Filters.css";
-import params from "../../Explore/exploreParams";
 
 const Filters = () => {
     // Importing context
@@ -15,6 +14,7 @@ const Filters = () => {
     // Setting up input ref
     const inputRefPeriod = useRef();
     const inputRefColor = useRef();
+    const inputRefDept = useRef();
 
     // Setting up Search Params
     const [searchParams, setSearchParams] = useSearchParams()
@@ -22,7 +22,7 @@ const Filters = () => {
 
     const color = searchParams.get("color");
     const period = searchParams.get("period");
-    const department = searchParams.get("department");
+    const department_id = searchParams.get("department_id");
     const on_display = searchParams.get("on_display") || false;
 
     // Function to fetch filtered artworks every time new filter is implemented
@@ -34,7 +34,7 @@ const Filters = () => {
             per_page: "30",
             color,
             period,
-            department,
+            department_id,
             on_display,
         });
 
@@ -56,21 +56,8 @@ const Filters = () => {
     // useEffect to run every time the search params change
     useEffect(() => {
         console.log("useEffect has run")
-        if (searchParams != {}) {
-            getArtworks();
-        }
-    }, [color, period, department]);
-
-    // Function to update filters when submit button is clicked
-    const handleSubmit = () => {
-        console.log("Period:", inputRefPeriod.current.value);
-        console.log("Color:", inputRefColor.current.value);
-
-        const period = inputRefPeriod.current.value;
-        const color = inputRefColor.current.value;
-
-        setSearchParams({ color, period });
-    };
+        getArtworks();
+    }, [color, period, department_id]);
 
     // Mapping out filter options for color swatches, departments and periods
     const colors = filterOptions.swatches.map((ele, index) => {
@@ -79,17 +66,35 @@ const Filters = () => {
         )
     });
 
-    // const depts = filterOptions.depts.map((ele) => {
-    //     return (
-    //         <option value={ele.name} key={ele.id}/>
-    //     )
-    // });
+    const depts = filterOptions.depts.map((ele) => {
+        return (
+            <option value={ele.id} key={ele.id}/>
+        )
+    });
 
     const periods = filterOptions.periods.map((ele) => {
         return (
             <option value={ele.name} key={ele.id} />
         )
     });
+
+    // Function to update filters when submit button is clicked
+    const handleSubmit = () => {
+        console.log("Period:", inputRefPeriod.current.value);
+        console.log("Color:", inputRefColor.current.value);
+        console.log("Dept:", inputRefDept.current.value);
+
+        const period = inputRefPeriod.current.value;
+        const color = inputRefColor.current.value;
+        const department_id = inputRefDept.current.value
+
+        if (color != "#000000") {
+            setSearchParams({ color, period, department_id });
+        } else {
+            setSearchParams({ period, department_id })
+        };
+
+    };
 
     return (
         <div id="filters">
@@ -99,12 +104,10 @@ const Filters = () => {
                     {colors}
                 </datalist>
 
-                {/*
-                <input list="depts" placeholder="Department" />
+                <input ref={inputRefDept} list="depts" placeholder="Department" />
                 <datalist id="depts">
                     {depts}
                 </datalist>
-                */}
 
                 <input ref={inputRefPeriod} list="periods" placeholder="Period" />
                 <datalist id="periods">

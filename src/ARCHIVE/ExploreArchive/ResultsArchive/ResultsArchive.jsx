@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../../App";
-import lozad from "lozad";
+import { DataContext } from "../../../App";
 
-import "./Results.css";
-import Pagination from "../../Pagination/Pagination";
+import "./ResultsArchive.css";
+import Pagination from "../../../Pagination/Pagination";
 
 const Results = () => {
     // Importing data from App

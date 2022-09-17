@@ -5,8 +5,7 @@ import { DataContext } from "../App";
 import "./ExploreRev.css";
 
 import Filters from "./Filters/Filters";
-import ResultsRev from "../ResultsRev/ResultsRev";
-import Results from "../Explore/Results/Results";
+import ResultsRev from "../Results/Results";
 
 const ExploreRev = () => {
     // Importing context

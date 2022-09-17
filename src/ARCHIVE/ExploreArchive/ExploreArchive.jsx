@@ -2,12 +2,12 @@
 
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../App";
-import "./Explore.css";
+import { DataContext } from "../../App";
+import "./ExploreArchive.css";
 
 import ExploreParams from "./ExploreParams&Options/ExploreParams";
 import ParamOptions from "./ExploreParams&Options/ParamOptions";
-import Results from "./Results/Results";
+import Results from "./ResultsArchive/ResultsArchive";
 
 const Explore = () => {
     // Importing the context provided in App.jsx

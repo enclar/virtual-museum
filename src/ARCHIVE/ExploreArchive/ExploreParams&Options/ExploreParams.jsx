@@ -1,7 +1,7 @@
 //! Maps out the categories which the user can use to explore
 
 import { useContext } from "react";
-import { DataContext } from "../../App";
+import { DataContext } from "../../../App";
 import params from "../exploreParams";
 
 const ExploreParams = () => {

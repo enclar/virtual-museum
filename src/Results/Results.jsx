@@ -28,7 +28,7 @@ const ResultsRev = () => {
         if (dataContext.museum.status == "loading") {
             return <progress />
         } else if (dataContext.museum.searchResults == []) {
-            return <h3>No Artwork Available</h3>
+            return "No Artwork Available"
         } else {
             return artworks
         };

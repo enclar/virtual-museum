@@ -2,10 +2,10 @@
 
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../../App";
+import { DataContext } from "../../../App";
 import "./ExploreByDepartment.css"
 
-import Results from "../Results/Results";
+import Results from "../ResultsArchive/ResultsArchive";
 
 const ExploreByDepartment = () => {
     // Importing data context

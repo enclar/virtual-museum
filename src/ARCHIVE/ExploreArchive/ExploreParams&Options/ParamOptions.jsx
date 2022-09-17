@@ -1,6 +1,6 @@
 //! Maps out the various options to search for within the selected param (eg. color swatches/departments)
 import { useContext } from "react";
-import { DataContext } from "../../App";
+import { DataContext } from "../../../App";
 
 import ExploreByColor from "../ByColor/ExploreByColor";
 import ExploreByDepartment from "../ByDepartment/ExploreByDepartment";

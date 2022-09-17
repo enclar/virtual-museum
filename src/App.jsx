@@ -7,7 +7,6 @@ import "./App.css";
 // Importing Components
 import Home from "./Home/Home";
 import Layout from "./NavBar/Layout";
-import Explore from "./Explore/Explore";
 import ExploreRev from "./ExploreRev/ExploreRev";
 import ObjectDetails from "./ObjectDetails/ObjectDetails";
 import Favs from "./Favs/Favs";
@@ -88,7 +87,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
-              <Route path="/explore" element={<Explore />} />
+              <Route path="/explore" element={<ExploreRev />} />
               <Route path="/explore/:code" element={<ObjectDetails />} />
               <Route path="/favs" element={<Favs />} />
               <Route path="/favs/:code" element={<ObjectDetails />} />
