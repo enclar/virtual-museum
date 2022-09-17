@@ -1,0 +1,29 @@
+#results > h3 {
+    font-family: newyork;
+    color: rgb(172, 59, 59);
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#search-results {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1320px;
+    gap: 20px;
+    margin: 20px 0 100px 0;
+}
+
+.artwork {
+    /* position: relative; */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    color: navy;
+    text-align: center;
+    background-color: rgb(172, 59, 59, 0.5);
+}

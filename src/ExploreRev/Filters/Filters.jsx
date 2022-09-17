@@ -1,28 +1,68 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { useSearchParams } from "react-router-dom";
+import urlcat from "urlcat";
 import { DataContext } from "../../App";
 
 import "./Filters.css";
+import params from "../../Explore/exploreParams";
 
-const DeptFilter = () => {
+const Filters = () => {
+    // Importing context
+    const dataContext = useContext(DataContext);
+    const filterOptions = dataContext.museum.filterOptions; // Object containing arrays of the options for each category (color/dept/period)
 
+    // Setting up input ref
     const inputRefPeriod = useRef();
     const inputRefColor = useRef();
 
     // Setting up Search Params
     const [searchParams, setSearchParams] = useSearchParams()
+    // console.log("searchParams:", searchParams);
 
     const color = searchParams.get("color");
     const period = searchParams.get("period");
     const department = searchParams.get("department");
+    const on_display = searchParams.get("on_display") || false;
 
-    // Importing context
-    const dataContext = useContext(DataContext);
-    const filterOptions = dataContext.museum.filterOptions;
+    // Function to fetch filtered artworks every time new filter is implemented
+    const getArtworks = async () => {
+        const url = urlcat("https://api.collection.cooperhewitt.org/rest/", {
+            method: "cooperhewitt.search.objects",
+            access_token: "4845918c6c961dd37cbb22942d5c2ec8",
+            page: "1",
+            per_page: "30",
+            color,
+            period,
+            department,
+            on_display,
+        });
 
+        try {
+            dataContext.dispatch({type: "LOADING", value: "loading"});
+            const response = await fetch(url);
+            const data = await response.json();
+            // console.log("Filtered Data:", data);
+            console.log("URL:", url);
+            dataContext.dispatch({type: "FILTER_ART", value: data.objects});
+            dataContext.dispatch({type: "LOADING", value: "done"});
+        }
+
+        catch (error) {
+            console.log(error);
+        }
+    };
+
+    // useEffect to run every time the search params change
+    useEffect(() => {
+        console.log("useEffect has run")
+        if (searchParams != {}) {
+            getArtworks();
+        }
+    }, [color, period, department]);
+
+    // Function to update filters when submit button is clicked
     const handleSubmit = () => {
-        // const value = document.querySelector("#period").value;
         console.log("Period:", inputRefPeriod.current.value);
         console.log("Color:", inputRefColor.current.value);
 
@@ -50,18 +90,6 @@ const DeptFilter = () => {
             <option value={ele.name} key={ele.id} />
         )
     });
-
-    // Onclick handler function for when person updates any field
-    // const addFilter = (period) => {
-
-    //     const url = urlcat("https://api.collection.cooperhewitt.org/rest/", {
-    //         method: "cooperhewitt.search.objects",
-    //         access_token: "4845918c6c961dd37cbb22942d5c2ec8",
-    //         period,
-    //         page,
-    //         per_page: "100"
-    //     });
-    // };
 
     return (
         <div id="filters">
@@ -98,4 +126,4 @@ const DeptFilter = () => {
     );
 };
 
-export default DeptFilter;
+export default Filters;
