@@ -22,13 +22,13 @@ const NavBar = () => {
                 <ul id="nav">
                     <li
                         className="nav-page"
-                        onClick={() => dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: "1"}})} // Setting state to ensure first page of results is shown
+                        onClick={() => dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: "1"}})} // Setting state to ensure first page of results is shown 
                     >
                         <Link className="nav-link" to="/explore">explore</Link>
                     </li>
                     <li 
                         className="nav-page"
-                        onClick={() => dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: "1"}})} // Setting state to ensure first page of results is shown
+                        onClick={() => dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: "1"}})} // Setting state to ensure first page of results is shown}
                     >
                         <Link className="nav-link" to="/videos">videos</Link>
                     </li>

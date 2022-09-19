@@ -17,7 +17,7 @@ const museumReducer = (state, action) => {
         //! ObjectDetails.jsx
         // Called when user wants to add an artwork to their favs list
         case "ADD_TO_FAVS":
-            return ({...state, favArtworks: [...state.favArtworks, action.value]})
+            return ({...state, favourites: action.value})
         
         //! ObjectDetails.jsx
         // Returning a list of swatches for a particular artwork
@@ -48,6 +48,11 @@ const museumReducer = (state, action) => {
         // Called to update pagination information (total number of pages/current page)
         case "UPDATE_PAGINATION":
             return({...state, pagination: action.value})
+        
+        //! DetailButtons.jsx
+        // Called to keep track of which page the user is on
+        case "UPDATE_CURR_LOCATION":
+            return ({...state, currLocation: action.value})
     }
 };
 

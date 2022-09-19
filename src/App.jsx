@@ -1,4 +1,4 @@
-import React, { useState, useReducer, createContext, useEffect } from "react";
+import React, { useReducer, createContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import urlcat from "urlcat";
 import museumReducer from "./museumReducer";
@@ -23,12 +23,13 @@ const App = () => {
     status: "loading",
     currSwatches: [],
     searchResults: [],
-    favArtworks: [],
+    favourites: {artworks: [], videos: []},
     imageIndex: 0,
     videoResults: [],
     filterOptions: {swatches: [], depts: [], periods: []},
     currentFilters: {color: "", dept: "", period: "", on_display: "false", query: ""},
-    pagination: {currPage: "1", totalPages: ""}
+    pagination: {currPage: "1", totalPages: ""},
+    currLocation: ""
   });
 
   // Upon loading app, pre-load all the filter data
