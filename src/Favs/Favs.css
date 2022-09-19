@@ -1,13 +1,3 @@
-@font-face {
-    font-family: newyork;
-    src: url("./fonts/newyork.otf");
-}
-
-@font-face {
-    font-family: ch-semibold;
-    src: url("./fonts/ch-semibold.otf");
-}
-
 #favs {
     display: flex;
     flex-direction: column;
@@ -51,4 +41,5 @@
 
 .artwork > h4 {
     margin: 5px 5px 0 5px;
+    font-family: ch-semibold;
 }

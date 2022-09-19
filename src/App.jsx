@@ -23,7 +23,7 @@ const App = () => {
     status: "loading",
     currSwatches: [],
     searchResults: [],
-    favourites: {artworks: [], videos: []},
+    favourites: {artworks: [], artwork_ids: []},
     imageIndex: 0,
     videoResults: [],
     filterOptions: {swatches: [], depts: [], periods: []},

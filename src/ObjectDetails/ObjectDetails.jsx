@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../App";
 import "./ObjectDetails.css";
 
-import DetailButtons from "../DetailButtons/DetailButtons";
+import BackButton from "../BackButton/BackButton";
+import FavouriteButton from "./FavouriteButton";
 
 const ObjectDetails = () => {
     // Importing the context
@@ -89,53 +90,63 @@ const ObjectDetails = () => {
                 {artwork.title_raw == "" || artwork.title_raw == null ? artwork.title : artwork.title_raw }
             </h1>
 
-            <div id="container">
-                <div id="obj-imgs">
-                    <div id="frame">
-                        <img id="img" src={artwork?.images[dataContext.museum.imageIndex]?.z?.url} alt="artwork" />
-                    </div>
-                    <div id="thumbnails">{thumbnails}</div>
+            <div id="obj-imgs">
+                <FavouriteButton />
+                <div id="frame">
+                    <img id="img" src={artwork?.images[dataContext.museum.imageIndex]?.z?.url} alt="artwork" />
+                </div>
+                <div id="thumbnails">{thumbnails}</div>
+            </div>
+
+            <div id="artwork-info">
+                <div id="description" className="info-category">
+                    <h2>DESCRIPTION</h2>
+                    <h3>{description}</h3>
                 </div>
 
-                <div id="artwork-info">
+                <div id="details" className="info-category">
+                    <h2>DETAILS</h2>
 
-                    <div id="description">
-                        <h2>DESCRIPTION</h2>
-                        <h3>{description}</h3>
-                    </div>
-
-                    <div id="details">
-                        <h2>DETAILS</h2>
+                    {artwork.year_acquired == null ?
+                        <span className="not-avail">Year of Acquisition not available</span> :
                         <h3>
                             <span className="category">Year of Acquisition</span>
-                            < br />
-                            {artwork.year_acquired == null ? <span className="not-avail">Date of Acquisition not available</span> : artwork.year_acquired}
-                        </h3>
-                        <h3>
-                            <span className="category">Dimensions</span>
-                            < br />
-                            {artwork.dimensions == null ? <span className="not-avail">Dimensions not available</span> : artwork.dimensions}
-                        </h3>
-                        <h3>
-                            <span className="category">Medium</span>
-                            < br />
-                            {artwork.medium == null ? <span className="not-avail">Media Type not available</span> : artwork.medium}
-                        </h3>
-                        <h3>
-                            <span className="category">Colors</span>
-                            < br />
-                            <div id="swatches">{swatches}</div>
-                        </h3>
-                    </div>
+                            <br />
+                            {artwork.year_acquired}
+                    </h3>}
 
-                    <div id="participants">
-                        <h2>PARTICIPANTS</h2>
-                        <div>{participants}</div>
-                    </div>
+                    {artwork.dimensions == null ?
+                    <span className="not-avail">Dimensions not available</span> :
+                    <h3>
+                        <span className="category">Dimensions</span>
+                        <br />
+                        {artwork.dimensions}
+                    </h3>}
 
-                    <DetailButtons />
+                    {artwork.medium == null ?
+                    <span className="not-avail">Media Type not available</span> :
+                    <h3>
+                        <span className="category">Medium</span>
+                        <br />
+                        {artwork.medium}
+                    </h3>}
+
+                    {dataContext.museum.currSwatches == [] ?
+                    <span className="not-avail">Color Swatches not available</span> :
+                    <h3>
+                        <span className="category">Colors</span>
+                        <br />
+                        <div id="swatches">{swatches}</div>
+                    </h3>}
+                </div>
+
+                <div id="participants" className="info-category">
+                    <h2>PARTICIPANTS</h2>
+                    <div>{participants}</div>
                 </div>
             </div>
+
+            <BackButton />
         </div>
     );
 };

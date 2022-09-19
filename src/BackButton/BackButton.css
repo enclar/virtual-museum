@@ -1,0 +1,12 @@
+#back-btn {
+    background: rgb(172, 59, 59);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 30px 3px;
+    width: 100px;
+    height: 30px;
+    font-family: ch-semibold;
+    margin-top: 20px;
+}
