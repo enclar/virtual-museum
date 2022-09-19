@@ -1,24 +1,18 @@
-import { useEffect, useContext } from "react";
-import urlcat from "urlcat";
-
-import { DataContext } from "../App";
 import "./Explore.css";
 
 import Filters from "./Filters/Filters";
 import Results from "../Results/Results";
-import PaginationRev from "../Pagination/PaginationRev";
+import Pagination from "../Pagination/Pagination";
 
-const ExploreRev = () => {
-    // Importing context
-    const dataContext = useContext(DataContext);
-
+const Explore = () => {
     return (
         <div id="explore">
             <h1>EXPLORE</h1>
             <Filters />
             <Results />
+            <Pagination />
         </div>
     );
 };
 
-export default ExploreRev;
+export default Explore;

@@ -1,23 +1,40 @@
 import { useContext } from "react";
 import { DataContext } from "../App";
-import "./Pagination.css";
 
 const Pagination = () => {
+    // Importing context
     const dataContext = useContext(DataContext);
-    const pageInfo = dataContext.museum.pagination;
+    const pagination = dataContext.museum.pagination; // Pagination info
+    const currPage = pagination.currPage; // Current Page
 
-    const pages = pageInfo.total.map((ele, index) => {
-        return (
-            <h2 
-                className="pagenum"
-                onClick={() => dataContext.dispatch({type: "SWITCH_PAGE", value: {...pageInfo, current: ele}})}
-                key={index}
-            >{ele}</h2>
-        );
-    });
+    // Function to move to the next page
+    const handleNext = () => {
+        console.log("next page");
+        if (parseInt(currPage) < parseInt(pagination.totalPages)) { // Checking that user is currently not on last page of results
+            const newPage = (parseInt(currPage) + 1).toString(); // Converting to integer to add one, then converting back to string
+            dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: newPage}}); // Updating the state
+        } else {
+            alert("No more results to display") // Produce error if user is on last page
+        }
+    };
+
+    // Function to move to previous page
+    const handlePrev = () => {
+        console.log("previous page");
+        if (parseInt(currPage) > 1) { // Checking that user is currently not on the first page
+            const newPage = (parseInt(currPage) - 1).toString(); // Converting to integer to minus 1, then converting back to string
+            dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: newPage}}); // Updating the state
+        } else {
+            alert("First page of results") // If user is on the first page of results, produce error
+        }
+    };
+
 
     return (
-        <div id="pagination">{pages}</div>
+        <div id="pagination">
+            <button onClick={handlePrev}>PREV</button>
+            <button onClick={handleNext}>NEXT</button>
+        </div>
     );
 };
 

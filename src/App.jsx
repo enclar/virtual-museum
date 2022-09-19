@@ -21,9 +21,6 @@ const App = () => {
   const [museum, dispatch] = useReducer(museumReducer, {
     selectedArtwork: {},
     status: "loading",
-    // currExploreParam: null,
-    // availSwatches: [],
-    // availDepts: [],
     currSwatches: [],
     searchResults: [],
     favArtworks: [],
@@ -31,8 +28,7 @@ const App = () => {
     videoList: [],
     filterOptions: {swatches: [], depts: [], periods: []},
     currentFilters: {color: "", dept: "", period: "", on_display: "false"},
-    totalPages: "",
-    currPage: "1",
+    pagination: {currPage: "1", totalPages: ""}
   });
 
   // Upon loading app, pre-load all the filter data

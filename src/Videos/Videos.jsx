@@ -4,7 +4,7 @@ import urlcat from "urlcat";
 import { DataContext } from "../App";
 import "./Videos.css";
 
-import Pagination from "../Pagination/Pagination";
+import Pagination from "../ARCHIVE/PaginationArchive";
 
 const Videos = () => {
     // Importing info via useContext
@@ -14,11 +14,11 @@ const Videos = () => {
 
     // Pulling the video results when page loads
     useEffect(() => {
-        const getVideos = async (page) => {
+        const getVideos = async () => {
             const url = urlcat ("https://api.collection.cooperhewitt.org/rest/", {
                 method: "cooperhewitt.videos.getList",
                 access_token: "4845918c6c961dd37cbb22942d5c2ec8",
-                page,
+                page: "1",
                 per_page: "20",
             });
 
@@ -30,10 +30,6 @@ const Videos = () => {
                 // Passing search results to the reducer
                 dataContext.dispatch({type: "EXPLORE_VIDEOS", value: data.videos});
 
-                // Passing page info to the reducer
-                const pageNums = Array.from({length: data.pages}, (_, i) => (i + 1).toString());
-                dataContext.dispatch({type: "SWITCH_PAGE", value: {...pageInfo, total: pageNums}});
-
                 dataContext.dispatch({type: "LOADING", value: "done"});
             }
 
@@ -43,8 +39,8 @@ const Videos = () => {
             }
         };
 
-        getVideos(pageInfo.current);
-    }, [pageInfo.current]); // Re-render every time the page value changes
+        getVideos();
+    }, []); // Re-render every time the page value changes
 
     const videoArr = dataContext?.museum?.videoList;
 

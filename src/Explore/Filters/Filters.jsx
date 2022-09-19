@@ -6,9 +6,10 @@ import "./Filters.css";
 const Filters = () => {
     // Import context and defining variables
     const dataContext = useContext(DataContext);
-    const filterOptions = dataContext.museum.filterOptions;
+    const filterOptions = dataContext.museum.filterOptions; // Filter info
+    const pagination = dataContext.museum.pagination; // Pagination info
 
-    // Setting up useRef
+    // Setting up useRef to read input values
     const inputRefColor = useRef();
     const inputRefDept = useRef();
     const inputRefPeriod = useRef();
@@ -42,7 +43,9 @@ const Filters = () => {
             currColor = inputRefColor.current.value
         }
 
-        dataContext.dispatch({
+        dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: "1"}}); // New search results will start from page 1
+
+        dataContext.dispatch({ // Updating active filters
             type: "UPDATE_CURRENT_FILTERS",
             value: {
                 color: currColor,
@@ -50,8 +53,8 @@ const Filters = () => {
                 period: inputRefPeriod.current.value,
                 on_display: inputRefOnDisplay.current.value
             }
-        })
-    }
+        });
+    };
 
     return (
         <div id="filters">

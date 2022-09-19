@@ -43,16 +43,11 @@ const museumReducer = (state, action) => {
         // Called to update the filter options which are currently in place/switch page
         case "UPDATE_CURRENT_FILTERS":
             return({...state, currentFilters: action.value})
-        
-        //! Results.jsx
-        // Called to update the total number of pages which the search results have
-        case "UPDATE_TOTAL_PAGES":
-            return ({...state, totalPages: action.value})
 
-        //! PaginationRev.jsx.jsx
-        // Called when user wants to change page
-        case "SWITCH_PAGE":
-            return({...state, currPage: action.value})
+        //! Explore.jsx
+        // Called to update pagination information (total number of pages/current page)
+        case "UPDATE_PAGINATION":
+            return({...state, pagination: action.value})
     }
 };
 

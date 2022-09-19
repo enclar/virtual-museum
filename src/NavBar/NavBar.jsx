@@ -1,7 +1,14 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom"
+
+import { DataContext } from "../App";
 import "./NavBar.css";
 
 const NavBar = () => {
+    // Importing context
+    const dataContext = useContext(DataContext);
+    const pagination = dataContext.museum.pagination; // Pagination info
+
     return (
         <header id="header">
             <div>
@@ -13,7 +20,10 @@ const NavBar = () => {
             </div>
             <nav>
                 <ul id="nav">
-                    <li className="nav-page">
+                    <li
+                        className="nav-page"
+                        onClick={() => dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: "1"}})} // Setting state to ensure first page of results is shown
+                    >
                         <Link className="nav-link" to="/explore">explore</Link>
                     </li>
                     <li className="nav-page">
