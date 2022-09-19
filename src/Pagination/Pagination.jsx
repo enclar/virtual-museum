@@ -34,8 +34,11 @@ const Pagination = () => {
 
     return (
         <div id="pagination">
-            <button onClick={handlePrev}>PREV</button>
-            <button onClick={handleNext}>NEXT</button>
+            <div id="buttons">
+                <button onClick={handlePrev}>PREV</button>
+                <button onClick={handleNext}>NEXT</button>
+            </div>
+            <h4>{pagination.currPage} / {pagination.totalPages}</h4>
         </div>
     );
 };
