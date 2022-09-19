@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../App";
 import "./ObjectDetails.css";
 
+import DetailButtons from "../DetailButtons/DetailButtons";
+
 const ObjectDetails = () => {
     // Importing the context
     const dataContext = useContext(DataContext);
@@ -83,7 +85,6 @@ const ObjectDetails = () => {
 
     return (
         <div id="obj-details">
-
             <h1 id="title">
                 {artwork.title_raw == "" || artwork.title_raw == null ? artwork.title : artwork.title_raw }
             </h1>
@@ -132,13 +133,7 @@ const ObjectDetails = () => {
                         <div>{participants}</div>
                     </div>
 
-                    <div id="buttons">
-                        <button
-                            id="like-btn"
-                            onClick={() => dataContext.dispatch({type: "ADD_TO_FAVS", value: artwork})}
-                        >LIKE</button>
-                        <Link id="back-btn" to="/explore">BACK</Link>
-                    </div>
+                    <DetailButtons />
                 </div>
             </div>
         </div>

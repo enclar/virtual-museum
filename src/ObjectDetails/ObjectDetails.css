@@ -156,22 +156,3 @@ h3 > span.not-avail {
     width: 40px;
     height: 40px;
 }
-
-#buttons {
-    display: flex;
-    gap: 20px;
-}
-
-#back-btn, #like-btn {
-    width: 75px;
-    height: 30px;
-    border: none;
-    background: #9b2226;
-    border-radius: 5px;;
-    color: white;
-    font-family: ch-semibold;
-    font-size: 15px;
-    text-align: center;
-    line-height: 220%;
-    /* margin-top: 20px; */
-}
