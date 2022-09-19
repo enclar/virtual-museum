@@ -27,7 +27,7 @@ const App = () => {
     imageIndex: 0,
     videoResults: [],
     filterOptions: {swatches: [], depts: [], periods: []},
-    currentFilters: {color: "", dept: "", period: "", on_display: "false"},
+    currentFilters: {color: "", dept: "", period: "", on_display: "false", query: ""},
     pagination: {currPage: "1", totalPages: ""}
   });
 

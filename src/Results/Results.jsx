@@ -23,6 +23,7 @@ const Results = () => {
             department_id: currentFilters.dept,
             period: currentFilters.period,
             on_display: currentFilters.on_display,
+            query: currentFilters.query
         });
 
         try {

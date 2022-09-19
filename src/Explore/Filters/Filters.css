@@ -6,7 +6,7 @@
 #filters {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
 }
 
@@ -15,7 +15,7 @@
     gap: 15px;
 }
 
-#preset-filters > input {
+#preset-filters > input, #query {
     background: lightgoldenrodyellow;
     border: none;
     padding: 5px 10px 2.5px;
@@ -23,11 +23,19 @@
     font-family: ch-semibold;
 }
 
+#query {
+    width: 668px;
+}
+
 #preset-filters > input:focus {
     background: goldenrod;
 }
 
-#search-btn {
+#buttons {
+    margin-top: 10px;
+}
+
+#buttons > button {
     background: rgb(172, 59, 59);
     color: white;
     border: none;
@@ -38,7 +46,7 @@
     font-family: ch-semibold;
 }
 
-#search-btn:hover {
+#buttons > button:hover {
     background: goldenrod;
     color: navy;
 }

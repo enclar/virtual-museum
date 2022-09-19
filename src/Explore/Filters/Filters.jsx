@@ -14,6 +14,7 @@ const Filters = () => {
     const inputRefDept = useRef();
     const inputRefPeriod = useRef();
     const inputRefOnDisplay = useRef();
+    const inputRefQuery = useRef();
 
     // Map out datalist options for different params
     const colors = filterOptions.swatches.map((ele, index) => {
@@ -34,7 +35,7 @@ const Filters = () => {
         )
     })
 
-    // onClick function to update state
+    // Function to fetch new set of results when filter is changed
     const handleSearch = () => {
         let currColor;
         if (inputRefColor.current.value == "#000000") {
@@ -51,9 +52,22 @@ const Filters = () => {
                 color: currColor,
                 dept: inputRefDept.current.value,
                 period: inputRefPeriod.current.value,
-                on_display: inputRefOnDisplay.current.value
+                on_display: inputRefOnDisplay.current.value,
+                query: inputRefQuery.current.value
             }
         });
+    };
+
+    // Function to clear all active filters and return to original state
+    const handleClear = () => {
+        inputRefColor.current.value = "#000000";
+        inputRefDept.current.value = "";
+        inputRefPeriod.current.value = "";
+        inputRefOnDisplay.current.value = "";
+        inputRefQuery.current.value = "";
+
+        dataContext.dispatch({type: "UPDATE_CURRENT_FILTERS", value: {...filterOptions, on_display: "false"}});
+        dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, currPage: "1"}});
     };
 
     return (
@@ -81,7 +95,10 @@ const Filters = () => {
                 </datalist>
             </div>
 
+            <input ref={inputRefQuery} id="query" placeholder="Search for Keywords" />
+
             <div id="buttons">
+                <button id="clear-btn" onClick={handleClear}>CLEAR ALL</button>
                 <button id="search-btn" onClick={handleSearch}>SEARCH</button>
             </div>
         </div>
