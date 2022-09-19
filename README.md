@@ -3,6 +3,7 @@ This project aims to utilise the Cooper-Hewitt API to explore alternative ways f
 
 ## Chosen Libraries
 1. urlcat
+2. React-Simple-Img
 
 ## Credits
 Frame CSS - https://codepen.io/chris22smith/pen/PbBwjp

@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import urlcat from "urlcat";
-import { DataContext } from "../App";
+import { SimpleImg } from "react-simple-img";
 
+import { DataContext } from "../App";
 import "./Results.css";
 
 const Results = () => {
@@ -52,17 +53,17 @@ const Results = () => {
     // Mapping out the search results into thumbnails
     const artworks = searchResults.map((ele, index) => {
         return (
-            <Link className="artwork" to={`/explore/${ele.id}`} key={index}>
+            <Link
+                to={`/explore/${ele.id}`}
+                key={index}
+                onClick={() => {
+                    dataContext.dispatch({type: "SWITCH_IMAGE", value: 0}) // Making sure the first image is shown when details page is opened
+                    dataContext.dispatch({type: "VIEW_DETAILS", value: ele}) // Passing on the details of chosen artwork to be displayed
+                }}
+            >
                 <img
                     className="artwork"
-                    alt={ele?.title}
-                    src={ele?.images[0]?.b?.url}
-                    onClick={() => {
-                        // Making sure the first image is shown when details page is opened
-                        dataContext.dispatch({type: "SWITCH_IMAGE", value: 0})
-                        // Passing on the details of chosen artwork to be displayed
-                        dataContext.dispatch({type: "VIEW_DETAILS", value: ele})
-                    }}
+                    src={ele?.images[0]?.n?.url}
                 />
             </Link>
         );
