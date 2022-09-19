@@ -20,11 +20,15 @@
 }
 
 #title {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    text-align: center;
     background: #9b2226;
     color: white;
     padding: 18px 30px 10px 30px;
     font-size: 40px;
-    box-shadow: 5px 5px #005f73;
+    box-shadow: 10px 10px #005f73;
 }
 
 #container {
