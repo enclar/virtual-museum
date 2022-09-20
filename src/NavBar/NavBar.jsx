@@ -11,13 +11,8 @@ const NavBar = () => {
 
     return (
         <header id="header">
-            <div>
-                <Link to="/">
-                    <h1 id="nav-title">COOPER HEWITT
-                    <br />
-                    <span id="nav-descript">smithsonian design museum</span></h1>
-                </Link>
-            </div>
+            <Link to="/" id="header-title">COOPER HEWITT</Link>
+
             <nav>
                 <ul id="nav">
                     <li

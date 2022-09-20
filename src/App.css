@@ -1,3 +1,41 @@
+@font-face {
+    font-family: ch-bold;
+    src: url(./fonts/CooperHewitt-Bold.otf);
+}
+
+@font-face {
+    font-family: ch-semibold;
+    src: url(./fonts/CooperHewitt-Semibold.otf);
+}
+
+@font-face {
+    font-family: ch-medium;
+    src: url(./fonts/CooperHewitt-Medium.otf);
+}
+
+@font-face {
+    font-family: ch-book;
+    src: url(./fonts/CooperHewitt-Book.otf);
+}
+
+@font-face {
+    font-family: ch-light;
+    src: url(./fonts/CooperHewitt-Light.otf);
+}
+
+@font-face {
+    font-family: newyork;
+    src: url(./fonts/NewYork.otf);
+}
+
+:root {
+    --mustard: #e3a220;
+    --beige: #ece7d3;
+    --mignight-blue: #06213e;
+    --olive-green: #767e2b;
+    --maroon-red: #ac311f;
+}
+
 body {
     margin: 0;
 }

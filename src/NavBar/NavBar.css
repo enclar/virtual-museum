@@ -1,33 +1,22 @@
-@font-face {
-    font-family: ch-semibold;
-    src: url("../fonts/ch-semibold.otf");
-}
-
 #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(35, 41, 74);
-    height: 150px;
-    padding: 0 50px 0 50px;
-    font-family: ch-semibold;
+    background-color: var(--olive-green);
+    height: 140px;
+    padding: 10px 50px 0;
+    font-family: ch-bold;
 }
 
 a {
     text-decoration: none;
-    color: aliceblue;
 }
 
-#nav-title {
-    font-size: 40px;
+#header-title {
+    color: var(--beige);
+    font-size: 50px;
     letter-spacing: 3px;
-    line-height: 80%;
-    margin: 0;
-}
-
-#nav-descript {
-    font-size: 23px;
-    letter-spacing: 1px;
+    text-shadow: 4px 4px var(--mignight-blue);
 }
 
 #nav {
@@ -36,11 +25,12 @@ a {
     gap: 40px;
 }
 
-.nav-page {
+a.nav-link {
     font-size: 25px;
-    font-weight: bold;
+    color: var(--beige);
 }
 
 a.nav-link:hover {
-    color: #ee9b00;
+    color: var(--mustard);
+    text-shadow: 2px 2px var(--mignight-blue);
 }
