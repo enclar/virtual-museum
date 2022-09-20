@@ -1,4 +1,4 @@
-// Component to display the artwork description
+//! Component to display the artwork description
 
 import { useContext } from "react";
 import { DataContext } from "../App";
@@ -26,7 +26,7 @@ const Description = () => {
     const description = getDescription();
 
     return (
-        <div id="obj-description" className="info-category">
+        <div id="description" className="info-category">
             <h2>DESCRIPTION</h2>
             <h3>{description}</h3>
         </div>
