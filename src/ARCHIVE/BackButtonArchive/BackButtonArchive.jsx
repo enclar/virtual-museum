@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../App";
-
-import "./BackButton.css";
+import { DataContext } from "../../App";
 
 const BackButton = () => {
     // Importing context

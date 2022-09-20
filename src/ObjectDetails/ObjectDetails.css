@@ -17,11 +17,11 @@
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    margin: 20px 0 30px;
+    margin: 0 0 30px;
     padding: 18px 30px 10px 30px;
     max-width: 60vw;
     font-size: 40px;
-    background: var(--midnight-blue);
+    background: var(--mustard);
     color: white;
     box-shadow: 10px 10px var(--maroon-red);
 }
@@ -31,6 +31,19 @@
     gap: 30px;
     margin-top: 20px;
     color: var(--midnight-blue);
+}
+
+/* ====== Breadcrumbs.jsx ====== */
+#breadcrumbs {
+    font-family: ch-book;
+    color: var(--midnight-blue);
+}
+
+#breadcrumbs > span:hover {
+    font-family: ch-medium;
+    color: var(--mustard);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* ====== Images.jsx ====== */
@@ -85,7 +98,7 @@
 .info-category {
     background-color: white;
     box-shadow: 5px 5px 5px rgb(202, 202, 202);
-    width: 350px;
+    width: 20vw;
     height: fit-content;
     padding: 30px 20px;
     display: flex;
@@ -98,12 +111,12 @@
 .info-category > h2 {
     background: var(--olive-green);
     color: white;
-    width: 310px;
+    width: 17vw;
     height: 40px;
     margin: 0 0 5px;
     padding: 0 20px;
-    font-size: 25px;
-    line-height: 180%;
+    font-size: 23px;
+    line-height: 200%;
     text-align: center;
     letter-spacing: 2px;
 }
@@ -121,8 +134,9 @@ h3 {
 
 h3 > span.not-avail {
     color: var(--maroon-red);
-    font-size: 110%;
-    font-family: ch-thin;
+    font-size: 100%;
+    font-family: ch-light;
+    font-style: italic;
 }
 
 h3 > span.category {

@@ -19,13 +19,20 @@ export const DataContext = createContext();
 const App = () => {
 
   const [museum, dispatch] = useReducer(museumReducer, {
+    // Relating to a selected artwork and its details
     selectedArtwork: {},
-    status: "loading",
+    imageIndex: 0,
     currSwatches: [],
+
+    // Status of loading
+    status: "loading",
+
+    // Relating to results/a group of artworks
     searchResults: [],
     favourites: {artworks: [], artwork_ids: []},
-    imageIndex: 0,
     videoResults: [],
+
+    // Relating to filters/current location/pagination
     filterOptions: {swatches: [], depts: [], periods: []},
     currentFilters: {color: "", dept: "", period: "", on_display: "false", query: ""},
     pagination: {currPage: "1", totalPages: ""},

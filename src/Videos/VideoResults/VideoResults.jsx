@@ -1,8 +1,10 @@
+//! Component to display the videos
+
 import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import urlcat from "urlcat";
-import { DataContext } from "../App";
 
+import { DataContext } from "../../App";
 import "./VideoResults.css";
 
 const VideoResults = () => {
@@ -16,18 +18,16 @@ const VideoResults = () => {
             method: "cooperhewitt.videos.getList",
             access_token: "4845918c6c961dd37cbb22942d5c2ec8",
             page: pagination.currPage,
-            per_page: "20",
+            per_page: "24",
         });
 
         try {
-            console.log("Video URL:", url);
-
             dataContext.dispatch({type: "LOADING", value: "loading"});
             const response = await fetch(url);
             const data = await response.json();
 
-            dataContext.dispatch({type: "EXPLORE_VIDEOS", value: data.videos}); // Getting video results
             dataContext.dispatch({type: "UPDATE_PAGINATION", value: {...pagination, totalPages: data.pages}}); // Updating the total number of pages
+            dataContext.dispatch({type: "EXPLORE_VIDEOS", value: data.videos}); // Getting video results
 
             dataContext.dispatch({type: "LOADING", value: "done"});
         }
@@ -45,12 +45,12 @@ const VideoResults = () => {
     // Mapping out the available video reuslts
     const videos = videoResults.map((ele, index) => {
         return (
-            <Link to={`/videos/${ele.id}`} key={index}>
-                <h1 
-                    className="video" 
-                    onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
-                >{ele?.title}</h1>
-            </Link>
+            <Link
+                to={`/videos/${ele.id}`}
+                key={index}
+                className="video"
+                onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
+            />
         );
     });
 

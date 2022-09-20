@@ -2,8 +2,8 @@ import { useContext, useEffect } from "react";
 import { DataContext } from "../App";
 import "./Videos.css";
 
-import VideoResults from "../VideoResults/VideoResults";
-import Pagination from "../Pagination/Pagination";
+import VideoResults from "./VideoResults/VideoResults";
+import Pagination from "../Explore/Results/PageNumbers";
 
 const Videos = () => {        
     // Importing context

@@ -6,6 +6,8 @@ import { SimpleImg } from "react-simple-img";
 import { DataContext } from "../../App";
 import "./Results.css";
 
+import PageNumbers from "./PageNumbers";
+
 const Results = () => {
     // Importing context
     const dataContext = useContext(DataContext);
@@ -73,9 +75,12 @@ const Results = () => {
             {
             dataContext.museum.status == "loading" ?
             <progress /> :
-            <div id="result-container">
-                <div id="img-container">{artworks}</div>
-            </div>
+            <>
+                <div id="result-container">
+                    <div id="img-container">{artworks}</div>
+                </div>
+                <PageNumbers />
+            </>
             }
         </React.Fragment>
     );
