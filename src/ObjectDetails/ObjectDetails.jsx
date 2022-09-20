@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../App";
 import "./ObjectDetails.css";
 
+// Importing components
+import BreadCrumbs from "./BreadCrumbs";
+import Images from "./Images";
 import BackButton from "../BackButton/BackButton";
-import FavouriteButton from "./FavouriteButton";
 
 const ObjectDetails = () => {
     // Importing the context
@@ -69,35 +71,16 @@ const ObjectDetails = () => {
         );
     });
 
-    // Generating image thumbnails
-    const thumbnails = artwork.images.map((ele, index) => {
-        return (
-            <img
-                src={ele.sq.url}
-                key={index}
-                className="thumbnail"
-                onClick={() => {
-                    dataContext.dispatch({type: "SWITCH_IMAGE", value: index});
-                    console.log("change image");
-                }}
-            />
-        );
-    });
-
     return (
         <div id="obj-details">
+            <BreadCrumbs />
+
             <h1 id="title">
                 {artwork.title_raw == "" || artwork.title_raw == null ? artwork.title : artwork.title_raw }
             </h1>
 
-            <div id="obj-imgs">
-                <FavouriteButton />
-                <div id="frame">
-                    <img id="img" src={artwork?.images[dataContext.museum.imageIndex]?.z?.url} alt="artwork" />
-                </div>
-                <div id="thumbnails">{thumbnails}</div>
-            </div>
-
+            <Images />
+            
             <div id="artwork-info">
                 <div id="description" className="info-category">
                     <h2>DESCRIPTION</h2>
