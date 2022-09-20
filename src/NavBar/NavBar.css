@@ -16,7 +16,7 @@ a {
     color: var(--beige);
     font-size: 50px;
     letter-spacing: 3px;
-    text-shadow: 4px 4px var(--mignight-blue);
+    text-shadow: 4px 4px var(--midnight-blue);
 }
 
 #nav {
@@ -32,5 +32,5 @@ a.nav-link {
 
 a.nav-link:hover {
     color: var(--mustard);
-    text-shadow: 2px 2px var(--mignight-blue);
+    text-shadow: 2px 2px var(--midnight-blue);
 }

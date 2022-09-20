@@ -1,55 +1,39 @@
-@font-face {
-    font-family: newyork;
-    src: url("../fonts/newyork.otf");
-}
-
-@font-face {
-    font-family: ch-semibold;
-    src: url("../fonts/ch-semibold.otf");
-}
-
 #home {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    margin: 0;
-    background: center / cover no-repeat url("../images/home-background.png"), rgb(0, 0, 50);
-    height: 100vh;
-}
-
-#background {
-    width: 100vh;
-    height: 100vh;
-    background: url("../images/home-background.png");
+    background-color: var(--beige);
+    padding: 50px 0 100px;
+    min-height: 100vh;
+    height: fit-content;
 }
 
 #welcome {
+    color: var(--mustard);
     font-family: newyork;
-    color: aliceblue;
-    margin: 50px 0 0 0;
+    font-size: 35px;
+    margin: 0;
+    font-weight: bold;
 }
 
 #ch {
-    font-family: ch-semibold;
+    color: var(--maroon-red);
+    font-family: ch-medium;
     font-size: 110px;
     text-align: center;
-    text-justify: inter-ideograph;
     letter-spacing: 3px;
     line-height: 100%;
     margin: 0;
-    color: #9b2226;
-    -webkit-text-stroke-width: 2.5px;
-    -webkit-text-stroke-color: aliceblue;
 }
 
 #ch > span {
-    color: #ee9b00;
+    color: var(--midnight-blue);
 }
 
 #line {
-    background-color: aliceblue;
-    width: 3px;
+    background-color: var(--mustard);
+    width: 4px;
     height: 75px;
     margin: 0;
 }
@@ -57,15 +41,14 @@
 #online {
     font-size: 60px;
     font-family: newyork;
-    color: #ca6702;
+    color: var(--midnight-blue);
     margin: 0;
-    text-shadow: 2px 2px aliceblue;
 }
 
 #blurb {
     font-size: 30px;
     font-family: newyork;
-    color: #94d2bd;
+    color: var(--olive-green);
     margin: 0;
     text-align: center;
     letter-spacing: 3px;
