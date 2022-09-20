@@ -1,8 +1,3 @@
-/* @font-face {
-    font-family: ch-semibold;
-    src: url("../../fonts/ch-semibold.otf");
-} */
-
 #filters {
     display: flex;
     flex-direction: column;
@@ -16,7 +11,8 @@
 }
 
 #preset-filters > input, #query {
-    background: lightgoldenrodyellow;
+    background: white;
+    color: var(--midnight-blue);
     border: none;
     padding: 5px 10px 2.5px;
     height: 25px;
@@ -28,7 +24,7 @@
 }
 
 #preset-filters > input:focus {
-    background: goldenrod;
+    background: var(--mustard);
 }
 
 #buttons {
@@ -37,8 +33,8 @@
     gap: 20px;
 }
 
-#buttons > button {
-    background: rgb(172, 59, 59);
+#filters > #buttons > button {
+    background: var(--olive-green);
     color: white;
     border: none;
     cursor: pointer;
@@ -48,7 +44,7 @@
     font-family: ch-semibold;
 }
 
-#buttons > button:hover {
-    background: goldenrod;
-    color: navy;
+#filters > #buttons > button:hover {
+    background: var(--mustard);
+    color: var(--midnight-blue);
 }

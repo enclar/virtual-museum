@@ -3,7 +3,7 @@ import { DataContext } from "../App";
 import "./Explore.css";
 
 import Filters from "./Filters/Filters";
-import Results from "../Results/Results";
+import Results from "./Results/Results";
 import Pagination from "../Pagination/Pagination";
 
 const Explore = () => {
@@ -18,6 +18,7 @@ const Explore = () => {
         <div id="explore">
             <h1>EXPLORE</h1>
             <Filters />
+            <div id="lights"></div>
             <Results />
             <Pagination />
         </div>

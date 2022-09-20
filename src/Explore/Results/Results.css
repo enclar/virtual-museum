@@ -1,0 +1,33 @@
+#result-container {
+    width: 80vw;
+    height: fit-content;
+    padding: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+#img-container {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+}
+
+a.artwork-link {
+    display: flex;
+    flex-direction: column;
+    background: var(--beige);
+}
+
+progress {
+    margin-top: 20px;
+}
+
+.artwork {
+    flex-shrink: 0;
+    display: inline-block;
+    object-fit: cover;
+    border: 8px double var(--mustard);
+    padding: 5px;
+    background-color: rgb(240, 203, 111);
+}

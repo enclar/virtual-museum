@@ -2,26 +2,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
 }
 
-div#buttons > button {
-    background: rgb(172, 59, 59);
+#pagination > div#buttons {
+    margin: 0;
+}
+
+#pagination > div#buttons > button {
+    background: var(--maroon-red);
     color: white;
     border: none;
     cursor: pointer;
     padding: 5px 10px 2.5px;
-    width: 100px;
-    height: 30px;
+    width: 75px;
+    height: 25px;
     font-family: ch-semibold;
 }
 
-div#buttons > button:hover {
-    background: goldenrod;
-    color: navy;
+#pagination > div#buttons > button:hover {
+    background: var(--mustard);
+    color: var(--midnight-blue);
 }
 
 #pagination > h4 {
-    font-family: ch-semibold;
-    color: navy;
+    font-family: ch-medium;
+    color: var(--midnight-blue);
 }
