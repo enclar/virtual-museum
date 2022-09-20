@@ -3,7 +3,7 @@ This project aims to utilise the Cooper-Hewitt API to explore alternative ways f
 
 ## Chosen Libraries
 1. urlcat
-2. React-Simple-Img
+2. MUI
 3. Splide
 
 ## Credits
