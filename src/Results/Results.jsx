@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import urlcat from "urlcat";
 import { SimpleImg } from "react-simple-img";
@@ -50,12 +50,13 @@ const Results = () => {
         getArtwork();
     }, [currentFilters, pagination.currPage]);
 
-    // Mapping out the search results into thumbnails
+    // Mapping out the search results
     const artworks = searchResults.map((ele, index) => {
         return (
             <Link
                 to={`/explore/${ele.id}`}
                 key={index}
+                style={{minWidth: ele?.images[0]?.n?.width, minHeight: ele?.images[0]?.n?.height}}
                 onClick={() => {
                     dataContext.dispatch({type: "SWITCH_IMAGE", value: 0}) // Making sure the first image is shown when details page is opened
                     dataContext.dispatch({type: "VIEW_DETAILS", value: ele}) // Passing on the details of chosen artwork to be displayed
@@ -70,14 +71,15 @@ const Results = () => {
     });
 
     return (
-        <div id="results">
-            <h3>
-                {dataContext.museum.searchResults != [] ? "CLICK: to view detailed artwork and description" : "no artwork available"}
-            </h3>
+        <React.Fragment>
+            {
+            dataContext.museum.status == "loading" ?
+            <progress /> :
             <div id="result-container">
-                {dataContext.museum.status == "loading" ? <progress /> : <div id="img-container">{artworks}</div>}
+                <div id="img-container">{artworks}</div>
             </div>
-        </div>
+            }
+        </React.Fragment>
     );
 };
 
