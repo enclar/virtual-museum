@@ -1,13 +1,3 @@
-@font-face {
-    font-family: newyork;
-    src: url("./fonts/newyork.otf");
-}
-
-@font-face {
-    font-family: ch-semibold;
-    src: url("./fonts/ch-semibold.otf");
-}
-
 #by-color {
     display: flex;
     flex-direction: column;
