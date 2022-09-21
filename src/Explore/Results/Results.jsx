@@ -74,8 +74,8 @@ const Results = () => {
             return <h2 id="no-results">SORRY, NO RESULTS FOUND!</h2>
         } else {
             return (
-                <div id="result-container">
-                    <div id="img-container">{artworks}</div>
+                <div id="artwork-container">
+                    <div id="artwork-results">{artworks}</div>
                 </div>
             );
         };

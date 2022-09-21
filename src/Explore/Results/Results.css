@@ -6,7 +6,7 @@ h2#no-results {
     color: var(--maroon-red);
 }
 
-#result-container {
+#artwork-container {
     width: 80vw;
     height: fit-content;
     padding: 20px 0 40px;
@@ -15,7 +15,7 @@ h2#no-results {
     white-space: nowrap;
 }
 
-#img-container {
+#artwork-results {
     display: flex;
     gap: 100px;
     align-items: center;
