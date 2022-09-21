@@ -29,7 +29,7 @@ const App = () => {
 
     // Relating to results/a group of artworks
     searchResults: [],
-    favourites: {artworks: [], artwork_ids: []},
+    favourites: [],
     videoResults: [],
 
     // Relating to filters/current location/pagination

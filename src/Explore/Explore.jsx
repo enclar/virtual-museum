@@ -4,6 +4,7 @@ import "./Explore.css";
 
 import Filters from "./Filters/Filters";
 import Results from "./Results/Results";
+import PageNumbers from "./Results/PageNumbers";
 
 const Explore = () => {
     // Importing context
@@ -19,6 +20,7 @@ const Explore = () => {
             <Filters />
             <div id="lights"></div>
             <Results />
+            <PageNumbers />
         </div>
     );
 };

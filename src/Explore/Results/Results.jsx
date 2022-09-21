@@ -1,12 +1,11 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import urlcat from "urlcat";
-import { SimpleImg } from "react-simple-img";
 
 import { DataContext } from "../../App";
 import "./Results.css";
 
-import PageNumbers from "./PageNumbers";
+import Heart from "./Heart";
 
 const Results = () => {
     // Importing context
@@ -30,8 +29,6 @@ const Results = () => {
         });
 
         try {
-            console.log("URL:", url);
-
             dataContext.dispatch({type: "LOADING", value: "loading"});
             const response = await fetch(url);
             const data = await response.json();
@@ -55,18 +52,20 @@ const Results = () => {
     // Mapping out the search results
     const artworks = searchResults.map((ele, index) => {
         return (
-            <Link
-                className="artwork-link"
-                to={`/explore/${ele.id}`}
-                key={index}
-                style={{minWidth: ele?.images[0]?.n?.width, minHeight: ele?.images[0]?.n?.height}}
-                onClick={() => {
-                    dataContext.dispatch({type: "SWITCH_IMAGE", value: 0}) // Making sure the first image is shown when details page is opened
-                    dataContext.dispatch({type: "VIEW_DETAILS", value: ele}) // Passing on the details of chosen artwork to be displayed
-                }}
-            >
-                <img className="artwork" src={ele?.images[0]?.n?.url} />
-            </Link>
+            <div className="artwork-div" key={index}>
+                <Link to={`/explore/${ele.id}`}>
+                    <img
+                        className="artwork"
+                        src={ele?.images[0]?.n?.url}
+                        style={{minWidth: ele?.images[0]?.n?.width, minHeight: ele?.images[0]?.n?.height}}
+                        onClick={() => {
+                            dataContext.dispatch({type: "SWITCH_IMAGE", value: 0}) // Making sure the first image is shown when details page is opened
+                            dataContext.dispatch({type: "VIEW_DETAILS", value: ele}) // Passing on the details of chosen artwork to be displayed
+                        }}
+                    />
+                </Link>
+                <Heart ele={ele} />
+            </div>
         );
     });
 
@@ -75,12 +74,9 @@ const Results = () => {
             {
             dataContext.museum.status == "loading" ?
             <progress /> :
-            <>
-                <div id="result-container">
-                    <div id="img-container">{artworks}</div>
-                </div>
-                <PageNumbers />
-            </>
+            <div id="result-container">
+                <div id="img-container">{artworks}</div>
+            </div>
             }
         </React.Fragment>
     );

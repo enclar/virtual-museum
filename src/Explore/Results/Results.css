@@ -1,3 +1,4 @@
+/* ====== Results.jsx ====== */
 #result-container {
     width: 80vw;
     height: fit-content;
@@ -11,11 +12,17 @@
     display: flex;
     gap: 100px;
     align-items: center;
+    
+}
+
+.artwork-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
 a.artwork-link {
-    display: flex;
-    flex-direction: column;
     background: var(--beige);
 }
 
@@ -30,4 +37,25 @@ progress {
     border: 8px double var(--mustard);
     padding: 5px;
     background-color: rgb(240, 203, 111);
+}
+
+/* ====== Heart.jsx ====== */
+.heart {
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    background: rgb(256, 256, 256, 0.5);
+    color: rgb(256, 256, 256, 0.5);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: grey;
+}
+
+.fav {
+    color: var(--maroon-red);
+    -webkit-text-stroke-width: 0px;
 }

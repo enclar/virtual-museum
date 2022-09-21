@@ -18,7 +18,7 @@ const Participants = () => {
     return (
         <div id="obj-participants" className="info-category">
             <h2>PARTICIPANTS</h2>
-            <h3>{artwork.participants.length == 0 ? <span className="not-avail">Participants not available</span> : participants}</h3>
+            {artwork.participants.length == 0 ? <span className="not-avail">Participants not available</span> : participants}
         </div>
     );
 };
