@@ -47,7 +47,7 @@ const Details = () => {
                 {artwork.medium}
             </h3>}
 
-            {dataContext.museum.currSwatches == [] ?
+            {dataContext.museum.currSwatches.length == 0 ?
             <span className="not-avail">Color Swatches not available</span> :
             <h3>
                 <span className="category">Colors</span>

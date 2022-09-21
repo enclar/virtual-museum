@@ -69,15 +69,23 @@ const Results = () => {
         );
     });
 
+    const getResults = () => {
+        if (dataContext.museum.searchResults.length == 0) {
+            return <h2 id="no-results">SORRY, NO RESULTS FOUND!</h2>
+        } else {
+            return (
+                <div id="result-container">
+                    <div id="img-container">{artworks}</div>
+                </div>
+            );
+        };
+    };
+
+    const results = getResults();
+
     return (
         <React.Fragment>
-            {
-            dataContext.museum.status == "loading" ?
-            <progress /> :
-            <div id="result-container">
-                <div id="img-container">{artworks}</div>
-            </div>
-            }
+            {dataContext.museum.status == "loading" ? <progress /> : results}
         </React.Fragment>
     );
 };

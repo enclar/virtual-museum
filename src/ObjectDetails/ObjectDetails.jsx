@@ -6,6 +6,7 @@ import "./ObjectDetails.css";
 
 // Importing components
 import BreadCrumbs from "./BreadCrumbs";
+import Heart from "../Explore/Results/Heart";
 import Images from "./Images";
 import Description from "./Description";
 import Details from "./Details";
@@ -39,9 +40,10 @@ const ObjectDetails = () => {
         <div id="obj-details">
             <BreadCrumbs />
 
-            <h1 id="title">
-                {artwork.title_raw == "" || artwork.title_raw == null ? artwork.title : artwork.title_raw }
-            </h1>
+            <div id="title">
+                <h1>{artwork.title_raw == "" || artwork.title_raw == null ? artwork.title : artwork.title_raw }</h1>
+                <Heart ele={artwork} />
+            </div>
 
             <Images />
             

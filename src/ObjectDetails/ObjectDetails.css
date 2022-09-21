@@ -15,6 +15,13 @@
 
 #title {
     display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+#title > h1 {
+    display: flex;
     flex-wrap: wrap;
     text-align: center;
     margin: 0 0 30px;
@@ -24,6 +31,13 @@
     background: var(--mustard);
     color: white;
     box-shadow: 10px 10px var(--maroon-red);
+}
+
+#title > div {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    line-height: 200%;
 }
 
 #artwork-info {

@@ -78,24 +78,24 @@ const Filters = () => {
                     {colors}
                 </datalist>
 
-                <input ref={inputRefDept} list="depts" placeholder="DEPARTMENT" />
+                <input ref={inputRefDept} list="depts" placeholder="Department" />
                 <datalist id="depts">
                     {depts}
                 </datalist>
 
-                <input ref={inputRefPeriod} list="periods" placeholder="PERIOD" />
+                <input ref={inputRefPeriod} list="periods" placeholder="Period" />
                 <datalist id="periods">
                     {periods}
                 </datalist>
 
-                <input ref={inputRefOnDisplay} list="on-display" placeholder="ON DISPLAY?" />
+                <input ref={inputRefOnDisplay} list="on-display" placeholder="On Display?" />
                 <datalist id="on-display">
                     <option value="true" />
                     <option value="false" />
                 </datalist>
             </div>
 
-            <input ref={inputRefQuery} id="query" placeholder="SEARCH THE COLLECTION" />
+            <input ref={inputRefQuery} id="query" placeholder="Search the Collection" />
 
             <div id="buttons">
                 <button id="clear-btn" onClick={handleClear}>CLEAR ALL</button>

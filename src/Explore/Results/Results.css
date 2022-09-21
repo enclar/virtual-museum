@@ -1,8 +1,15 @@
 /* ====== Results.jsx ====== */
+h2#no-results {
+    font-family: ch-semibold;
+    letter-spacing: 5px;
+    padding: 50px 0;
+    color: var(--maroon-red);
+}
+
 #result-container {
     width: 80vw;
     height: fit-content;
-    padding: 20px;
+    padding: 20px 0 40px;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -46,7 +53,6 @@ progress {
     border-radius: 12.5px;
     display: flex;
     justify-content: center;
-    align-items: center;
     font-size: 1.5em;
     cursor: pointer;
     background: rgb(256, 256, 256, 0.5);

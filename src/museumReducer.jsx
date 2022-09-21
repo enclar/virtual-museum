@@ -33,6 +33,11 @@ const museumReducer = (state, action) => {
         // Called when user clicks on the video page
         case "EXPLORE_VIDEOS":
             return ({...state, videoResults: action.value})
+
+        //! VideoResults.jsx
+        // Called when there is a video to be added
+        case "GET_VIDEO_IMG":
+            return ({...state, videoImages: action.value})
         
         //! App.jsx
         // Called to update filter options (list of colors/dept/periods etc.)

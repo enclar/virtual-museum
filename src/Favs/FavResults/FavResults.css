@@ -1,0 +1,30 @@
+#fav-results {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 80vw;
+    width: fit-content;
+    gap: 10px;
+}
+
+.fav-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.fav-div > h4 {
+    font-family: ch-medium;
+    color: var(--midnight-blue);
+    margin: 0;
+}
+
+.fav-img {
+    flex-shrink: 0;
+    display: inline-block;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}

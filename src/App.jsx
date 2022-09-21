@@ -31,6 +31,7 @@ const App = () => {
     searchResults: [],
     favourites: [],
     videoResults: [],
+    videoImages: [],
 
     // Relating to filters/current location/pagination
     filterOptions: {swatches: [], depts: [], periods: []},

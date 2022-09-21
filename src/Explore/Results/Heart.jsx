@@ -1,6 +1,5 @@
 //! Component for like button
 
-import { paginationClasses } from "@mui/material";
 import { useContext } from "react";
 import { DataContext } from "../../App";
 

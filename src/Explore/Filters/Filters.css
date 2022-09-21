@@ -23,8 +23,9 @@
     width: 668px;
 }
 
-#preset-filters > input:focus {
+#preset-filters > input:focus, #query:focus {
     background: var(--mustard);
+    color: white;
 }
 
 #buttons {
