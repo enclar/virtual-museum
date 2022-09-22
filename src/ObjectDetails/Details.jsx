@@ -1,6 +1,6 @@
 //! Component to display the artwork details (YOA/Dimensons/Media Type/Colors)
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../App";
 
 const Details = () => {

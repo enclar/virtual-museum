@@ -20,8 +20,8 @@
 .video {
     width: 280px;
     height: 180px;
-    background: center / cover no-repeat url(../../images/static-bg.jpg);
-    color: var(--midnight-blue);
+    background: url(../../images/bw-static.jpg);
+    color: var(--maroon-red);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +31,8 @@
 }
 
 .video:hover {
-    background: var(--mustard);
+    background: center / cover no-repeat url(../../images/static-bg.jpg);
+    color: var(--midnight-blue);
 }
 
 h1.video {

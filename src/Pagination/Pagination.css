@@ -1,0 +1,30 @@
+#pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pagination > div#buttons {
+    margin: 0;
+}
+
+#pagination > div#buttons > button {
+    background: var(--maroon-red);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px 2.5px;
+    width: 75px;
+    height: 25px;
+    font-family: ch-semibold;
+}
+
+#pagination > div#buttons > button:hover {
+    background: var(--mustard);
+    color: var(--midnight-blue);
+}
+
+#pagination > h5 {
+    font-family: ch-medium;
+    color: var(--midnight-blue);
+}

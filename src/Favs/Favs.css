@@ -13,8 +13,8 @@
 #favs > h1 {
     font-family: ch-semibold;
     color: white;
-    background-color: rgb(172, 59, 59);
-    box-shadow: 7px 7px goldenrod;
+    background-color: var(--maroon-red);
+    box-shadow: 7px 7px var(--midnight-blue);
     width: fit-content;
     height: fit-content;
     padding: 10px 50px 3px;

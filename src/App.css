@@ -28,13 +28,18 @@
     src: url(./fonts/NewYork.otf);
 }
 
+@font-face {
+    font-family: notted;
+    src: url(./fonts/Notted.ttf);
+}
+
 :root {
     --mustard: #e3a220;
     --beige: #ece7d3;
     --midnight-blue: #06213e;
     --olive-green: #767e2b;
     --maroon-red: #ac311f;
-    --light-blue: #e6f3f8;
+    --light-blue: #cee8f0;
 }
 
 body {

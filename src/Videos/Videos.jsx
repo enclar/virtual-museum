@@ -3,7 +3,7 @@ import { DataContext } from "../App";
 import "./Videos.css";
 
 import VideoResults from "./VideoResults/VideoResults";
-import Pagination from "../Explore/Results/PageNumbers";
+import Pagination from "../Pagination/Pagination";
 
 const Videos = () => {        
     // Importing context

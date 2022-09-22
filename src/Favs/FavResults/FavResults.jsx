@@ -24,6 +24,7 @@ const FavResults = () => {
                         }}
                     />
                 </Link>
+                <h4>{ele.title}</h4>
             </div>
         );
     });

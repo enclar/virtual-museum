@@ -11,12 +11,17 @@
 }
 
 #vid-details > h1 {
-    font-family: ch-semibold;
-    background: #9b2226;
-    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 0 30px;
     padding: 18px 30px 10px 30px;
+    max-width: 60vw;
     font-size: 40px;
-    box-shadow: 5px 5px #005f73;
+    background: var(--mustard);
+    color: white;
+    font-family: ch-semibold;
+    box-shadow: 10px 10px var(--maroon-red);
 }
 
 iframe {
@@ -24,18 +29,9 @@ iframe {
     height: 385px;
 }
 
-#vid-details > h2 {
-    font-family: newyork;
+#vid-details > h3 {
+    font-family: ch-book;
     color: #005f73;
     margin: 0;
-}
-
-#vid-details > a {
-    width: 100px;
-    height: 30px;
-    background: #9b2226;
-    color: white;
-    font-family: ch-semibold;
-    text-align: center;
-    line-height: 200%;
+    max-width: 500px;
 }

@@ -6,7 +6,8 @@ import "./Explore.css";
 
 import Filters from "./Filters/Filters";
 import Results from "./Results/Results";
-import PageNumbers from "./Results/PageNumbers";
+import Pagination from "../Pagination/Pagination";
+import PageNumbers from "../ARCHIVE/PageNumbersArchive";
 
 const Explore = () => {
     // Importing context
@@ -27,7 +28,7 @@ const Explore = () => {
                 <div id="results-center">
                     <div id="lights"></div>
                     <Results />
-                    <PageNumbers />
+                    <Pagination />
                 </div>
                 <div id="results-right"></div>
             </div>

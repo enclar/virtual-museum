@@ -20,7 +20,7 @@
     font-family: ch-semibold;
     color: white;
     background-color: var(--maroon-red);
-    box-shadow: 7px 7px var(--mustard);
+    box-shadow: 7px 7px var(--midnight-blue);
     width: fit-content;
     height: fit-content;
     padding: 10px 50px 3px;
@@ -40,7 +40,7 @@
 }
 
 #results-left, #results-right {
-    background: maroon;
+    background: black;
     width: 15vw;
     height: 74.4vh;
     padding: 100px 0 30px;

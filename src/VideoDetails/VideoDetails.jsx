@@ -20,7 +20,7 @@ const VideoDetails = () => {
             <BreadCrumbs />
             <h1>{videoInfo.title}</h1>
             <iframe src={videoInfo?.formats?.mp4?.[1080]} allow="autoplay"></iframe>
-            <h2>{videoInfo.description}</h2>
+            <h3>{videoInfo.description}</h3>
         </div>
     );
 };

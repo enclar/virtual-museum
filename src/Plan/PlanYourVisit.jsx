@@ -8,7 +8,7 @@ const PlanYourVisit = () => {
     return (
         <div id="plan">
             <h1>PLAN YOUR VISIT</h1>
-            <div id="map">MAP PLACEHOLDER</div>
+            <div id="map">SPLIDE</div>
             <ControlledAccordions />      
         </div>
     );
