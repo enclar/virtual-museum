@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import urlcat from 'urlcat';
 
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -6,9 +7,31 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import "./Accordian.css";
+
 const ControlledAccordions = () => {
   // Defining states
   const [expanded, setExpanded] = useState(false);
+
+  const galleryHours = [
+    {Sunday: "10:00 - 18:00"},
+    {Monday: "10:00 - 18:00"},
+    {Tuesday: "10:00 - 18:00"},
+    {Wednesday: "10:00 - 18:00"},
+    {Thursday: "10:00 - 18:00"},
+    {Friday: "10:00 - 18:00"},
+    {Saturday: "10:00 - 21:00"},
+  ];
+
+  const cafeHours = [
+    {Sunday: "07:30 - 18:00"},
+    {Monday: "07:30 - 18:00"},
+    {Tuesday: "07:30 - 18:00"},
+    {Wednesday: "07:30 - 18:00"},
+    {Thursday: "07:30 - 18:00"},
+    {Friday: "07:30 - 18:00"},
+    {Saturday: "08:00 - 21:00"},
+  ];
 
   // Function to handle change
   const handleChange = (panel) => (event, isExpanded) => {
@@ -16,7 +39,7 @@ const ControlledAccordions = () => {
   };
 
   return (
-    <div>
+    <div id="accordian">
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -27,12 +50,34 @@ const ControlledAccordions = () => {
             Opening Hours
           </Typography>
         </AccordionSummary>
-        <AccordionDetails sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
-          </Typography>
-          <img src="src/images/bw-static.jpg" />
+        <AccordionDetails sx={{ display: "flex", gap: "50px", justifyContent: "center" }}>
+          <table>
+            <tr>
+              <th colSpan={2}>GALLERIES</th>
+            </tr>
+            {galleryHours.map((ele, index) => {
+              return (
+                <tr>
+                  <td>{Object.keys(ele)}</td>
+                  <td>{Object.values(ele)}</td>
+                </tr>
+              )
+            })}
+          </table>
+
+          <table>
+          <tr>
+            <th colSpan={2}>CAFE</th>
+          </tr>
+          {cafeHours.map((ele, index) => {
+            return (
+              <tr>
+                <td>{Object.keys(ele)}</td>
+                <td>{Object.values(ele)}</td>
+              </tr>
+            )
+          })}
+        </table>
         </AccordionDetails>
       </Accordion>
 

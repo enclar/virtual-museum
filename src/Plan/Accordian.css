@@ -1,0 +1,22 @@
+th, td {
+    width: 100px;
+    height: 23px;
+    /* border: 1px solid var(--midnight-blue); */
+    margin: 0;
+}
+
+th {
+    font-family: ch-semibold;
+    padding-top: 5px;
+    background: var(--maroon-red);
+    color: white;
+}
+
+td {
+    font-family: ch-book;
+    padding: 5px 0 0 10px;
+}
+
+tr:nth-child(even) {
+    background: papayawhip;
+}
