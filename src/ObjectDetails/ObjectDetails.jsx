@@ -11,6 +11,7 @@ import Images from "./Images";
 import Description from "./Description";
 import Details from "./Details";
 import Participants from "./Participants";
+import BackButton from "./BackButton";
 
 const ObjectDetails = () => {
     // Importing the context
@@ -52,6 +53,8 @@ const ObjectDetails = () => {
                 <Details />
                 <Participants />
             </div>
+
+            <BackButton />
         </div>
     );
 };
