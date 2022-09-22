@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import urlcat from "urlcat";
 
@@ -51,22 +51,31 @@ const Results = () => {
 
     // Mapping out the search results
     const artworks = searchResults.map((ele, index) => {
-        return (
-            <div className="artwork-div" key={index}>
-                <Link to={`/explore/${ele.id}`}>
-                    <img
-                        className="artwork"
-                        src={ele?.images[0]?.n?.url}
-                        style={{minWidth: ele?.images[0]?.n?.width, minHeight: ele?.images[0]?.n?.height}}
-                        onClick={() => {
-                            dataContext.dispatch({type: "SWITCH_IMAGE", value: 0}) // Making sure the first image is shown when details page is opened
-                            dataContext.dispatch({type: "VIEW_DETAILS", value: ele}) // Passing on the details of chosen artwork to be displayed
-                        }}
-                    />
-                </Link>
-                <Heart ele={ele} />
-            </div>
-        );
+        if (ele.id != null) {
+            return (
+                <div className="artwork-div" key={index}>
+                    <Link to={`/explore/${ele.id}`}>
+                        {ele.images.length != 0 ?
+                        <img
+                            className="artwork"
+                            src={ele?.images[0]?.n?.url}
+                            style={{
+                                minWidth: ele?.images[0]?.n?.width,
+                                minHeight: ele?.images[0]?.n?.height
+                            }}
+                            onClick={() => {
+                                dataContext.dispatch({type: "SWITCH_IMAGE", value: 0}) // Making sure the first image is shown when details page is opened
+                                dataContext.dispatch({type: "VIEW_DETAILS", value: ele}) // Passing on the details of chosen artwork to be displayed
+                            }}
+                        />
+                        :
+                        <div id="no-img">No Image Available</div>
+                        }
+                    </Link>
+                    <Heart ele={ele} />
+                </div>
+            );
+        }
     });
 
     const getResults = () => {

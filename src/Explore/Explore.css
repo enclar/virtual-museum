@@ -42,7 +42,7 @@
 #results-left, #results-right {
     background: black;
     width: 15vw;
-    height: 74.4vh;
+    height: 84.9vh;
     padding: 100px 0 30px;
     border: 0.5px solid rgb(190, 190, 190);
     transform: scaleX(-1);
@@ -61,7 +61,7 @@
 #results-center {
     background-image: radial-gradient(white, var(--beige));
     width: 70vw;
-    height: 70vh;
+    height: 80vh;
     padding: 100px 0 30px;
     display: flex;
     flex-direction: column;

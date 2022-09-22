@@ -25,8 +25,9 @@ h2#no-results {
 .artwork-div {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 10px;
 }
 
 a.artwork-link {
@@ -44,6 +45,19 @@ progress {
     border: 8px double var(--mustard);
     padding: 5px;
     background-color: rgb(240, 203, 111);
+}
+
+#no-img {
+    width: 263px;
+    height: 320px;
+    background: rgb(240, 203, 111);
+    color: white;
+    border: 8px double var(--mustard);
+    font-family: ch-medium;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ====== Heart.jsx ====== */
