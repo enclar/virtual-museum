@@ -47,12 +47,15 @@ const VideoResults = () => {
     // Mapping out the available video reuslts
     const videos = videoResults.map((ele, index) => {
         return (
-            <Link to={`/videos/${ele.id}`} key={index}>
-                <h1 
-                    className="video" 
-                    onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
-                >{ele.title}</h1>
-            </Link>
+            <div className="video-div">
+                <Link to={`/videos/${ele.id}`} key={index}>
+                    <h1 
+                        className="video" 
+                        onClick={() => dataContext.dispatch({type: "VIEW_DETAILS", value: ele})}
+                    >{ele.title}</h1>
+                </Link>
+                <div className="headphones"></div>
+            </div>
         );
     });
 

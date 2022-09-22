@@ -7,7 +7,7 @@ h2#no-results {
 }
 
 #artwork-container {
-    width: 80vw;
+    width: 60vw;
     height: fit-content;
     padding: 20px 0 40px;
     overflow-x: scroll;

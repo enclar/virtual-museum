@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import urlcat from "urlcat";
 
@@ -84,9 +84,9 @@ const Results = () => {
     const results = getResults();
 
     return (
-        <React.Fragment>
+        <>
             {dataContext.museum.status == "loading" ? <progress /> : results}
-        </React.Fragment>
+        </>
     );
 };
 

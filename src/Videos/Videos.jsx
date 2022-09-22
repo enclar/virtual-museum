@@ -15,9 +15,18 @@ const Videos = () => {
 
     return (
         <div id="videos">
-            <h1 >VIDEOS</h1>
-            <VideoResults />
-            <Pagination />
+            <div id="video-top">
+                <h1 >VIDEOS</h1>
+            </div>
+            <div id="video-bottom">
+                <div id="bottom-left"></div>
+                <div id="bottom-center">
+                    <div id="lights"></div>
+                    <VideoResults />
+                    <Pagination />
+                </div>
+                <div id="bottom-right"></div>
+            </div>
         </div>
     );
 };
