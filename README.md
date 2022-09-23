@@ -19,10 +19,11 @@ The API contains details of digitized artworks, exhibition information and detai
 5. useNavigate
 6. useRef
 
-#### Chosen Libraries
+#### Chosen Libraries / Additional APIs
 1. urlcat - For more concise and accurate URLs
-2. MUI - To implement pre-designed components (eg. Accordian)
+2. MUI - To implement pre-designed components (eg. Accordion/Input Fields)
 3. Splide - Display photos as slideshow
+4. Geoapify - To generate static map
 
 ### Future Developments
 1. Experimenting with local storage to avoid losing information when page is closed/refreshed

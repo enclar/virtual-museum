@@ -1,28 +1,34 @@
 /* ====== GENERAL ====== */
 #accordian {
-    background-color: var(--mustard);
-    width: 50vw;
+    background: var(--mustard);
+    width: 30vw;
     box-shadow: none;
 }
 
 #accordian-header {
-    font-family: ch-medium;
-    background-color: var(--midnight-blue);
+    font-family: ch-bold;
     color: var(--beige);
-    width: 46.5vw;
     letter-spacing: 2px;
     text-align: center;
     padding-top: 5px;
 }
 
 #accordian-details {
+    /* background: url(../../images/tapestry-bg.png); */
+    background-size: 100%;
     font-family: ch-medium;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    /* padding-top: 30px; */
 }
 
 /* ====== Opening Hours ====== */
+#opening-hours {
+    display: flex;
+    gap: 50px;
+}
+
 .hours {
     display: flex;
     flex-direction: column;
@@ -48,6 +54,9 @@
 }
 
 /* ====== Getting Here ====== */
+#map-img {
+    width: 25vw;
+}
 
 /* ====== Book Tickets ====== */
 #text-fields {
@@ -59,4 +68,18 @@
 #time-filters {
     display: flex;
     gap: 30px;
+}
+
+/* ====== Get In Touch ====== */
+#social-media {
+    display: flex;
+    gap: 20px;
+}
+
+a.sm-icon {
+    color: white;
+}
+
+a.sm-icon:hover {
+    color: var(--maroon-red);
 }
