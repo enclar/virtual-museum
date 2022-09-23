@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import urlcat from 'urlcat';
 
 import Accordion from '@mui/material/Accordion';
@@ -7,30 +7,18 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import "./Accordian.css";
-
 const ControlledAccordions = () => {
   // Defining states
   const [expanded, setExpanded] = useState(false);
 
-  const galleryHours = [
-    {Sunday: "10:00 - 18:00"},
-    {Monday: "10:00 - 18:00"},
-    {Tuesday: "10:00 - 18:00"},
-    {Wednesday: "10:00 - 18:00"},
-    {Thursday: "10:00 - 18:00"},
-    {Friday: "10:00 - 18:00"},
-    {Saturday: "10:00 - 21:00"},
-  ];
-
-  const cafeHours = [
-    {Sunday: "07:30 - 18:00"},
-    {Monday: "07:30 - 18:00"},
-    {Tuesday: "07:30 - 18:00"},
-    {Wednesday: "07:30 - 18:00"},
-    {Thursday: "07:30 - 18:00"},
-    {Friday: "07:30 - 18:00"},
-    {Saturday: "08:00 - 21:00"},
+  const openingHours = [
+    {day: "Sunday", gallery: "10:00 - 18:00", cafe: "07:30 - 18:00"},
+    {day: "Monday", gallery: "10:00 - 18:00", cafe: "07:30 - 18:00"},
+    {day: "Tuesday", gallery: "10:00 - 18:00", cafe: "07:30 - 18:00"},
+    {day: "Wednesday", gallery: "10:00 - 18:00", cafe: "07:30 - 18:00"},
+    {day: "Thursday", gallery: "10:00 - 18:00", cafe: "07:30 - 18:00"},
+    {day: "Friday", gallery: "10:00 - 18:00", cafe: "07:30 - 18:00"},
+    {day: "Saturday", gallery: "10:00 - 21:00", cafe: "08:00 - 21:00"}
   ];
 
   // Function to handle change
@@ -39,7 +27,7 @@ const ControlledAccordions = () => {
   };
 
   return (
-    <div id="accordian">
+    <div id="accordians">
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -53,31 +41,21 @@ const ControlledAccordions = () => {
         <AccordionDetails sx={{ display: "flex", gap: "50px", justifyContent: "center" }}>
           <table>
             <tr>
-              <th colSpan={2}>GALLERIES</th>
+              <th style={{backgroundColor: "white"}}></th>
+              <th>GALLERIES</th>
+              <th>CAFE</th>
             </tr>
-            {galleryHours.map((ele, index) => {
+            {openingHours.map((ele) => {
               return (
                 <tr>
-                  <td>{Object.keys(ele)}</td>
-                  <td>{Object.values(ele)}</td>
+                  <td className="day">{ele.day}</td>
+                  <td className="time">{ele.gallery}</td>
+                  <td className="time">{ele.cafe}</td>
                 </tr>
               )
             })}
           </table>
-
-          <table>
-          <tr>
-            <th colSpan={2}>CAFE</th>
-          </tr>
-          {cafeHours.map((ele, index) => {
-            return (
-              <tr>
-                <td>{Object.keys(ele)}</td>
-                <td>{Object.values(ele)}</td>
-              </tr>
-            )
-          })}
-        </table>
+          <p id="cafe-description">The museum cafe is located on the ground floor. Operated by Italian restaurant and caterer Tarallucci e Vino, the cafe offers a seasonal menu featuring Italian pastries, espresso, salads, soups, and panini, as well as a large selection of wines by the glass.</p>
         </AccordionDetails>
       </Accordion>
 

@@ -1,0 +1,62 @@
+/* ====== GENERAL ====== */
+#accordian {
+    background-color: var(--mustard);
+    width: 50vw;
+    box-shadow: none;
+}
+
+#accordian-header {
+    font-family: ch-medium;
+    background-color: var(--midnight-blue);
+    color: var(--beige);
+    width: 14vw;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+#accordian-details {
+    font-family: ch-medium;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ====== Opening Hours ====== */
+.hours {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hours > p, h4 {
+    margin: 0;
+}
+
+.hours > h4 {
+    font-family: ch-semibold;
+    color: var(--midnight-blue);
+}
+
+.timings {
+    color: var(--beige);
+}
+
+#cafe-description {
+    color: var(--midnight-blue);
+    margin: 0;
+}
+
+/* ====== Getting Here ====== */
+
+/* ====== Book Tickets ====== */
+#text-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#time-filters {
+    display: flex;
+    gap: 30px;
+}
