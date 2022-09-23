@@ -14,7 +14,10 @@ const Images = () => {
     const carouselImages = images.map((ele, index) => {
         return (
             <SplideSlide key={index}>
-                <img id="img" src={ele.z.url} style={{minWidth: width, minHeight: height}} />
+                <img id="img"
+                    src={ele.z.url}
+                    style={{minWidth: width, maxHeight: height}}
+                />
             </SplideSlide>
         )
     })

@@ -18,8 +18,7 @@ h2#no-results {
 #artwork-results {
     display: flex;
     gap: 100px;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .artwork-div {
