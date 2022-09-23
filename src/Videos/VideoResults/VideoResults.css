@@ -15,33 +15,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0px;
 }
 
 .video {
     width: 280px;
     height: 180px;
-    background: url(../../images/bw-static.jpg);
-    color: var(--maroon-red);
+    background: center no-repeat url(../../images/static-bg.jpg);
+    color: var(--midnight-blue);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
     text-align: center;
-    border: 10px solid grey;
+    border: 5px solid var(--midnight-blue);
 }
 
 .video:hover {
-    background: center / cover no-repeat url(../../images/static-bg.jpg);
-    color: var(--midnight-blue);
+    background: center / cover no-repeat url(../../images/color-static-bg.jpg);
+    color: white;
 }
 
 h1.video {
-    font-family: ch-medium;
+    font-family: ch-semibold;
     font-size: 20px;
+    margin: 0;
 }
 
 .headphones {
-    background: var(--midnight-blue);
-    width: 50px;
-    height: 50px;
+    background: center / cover no-repeat url(../../images/headphones.png);
+    width: 4vw;
+    height: 4vw;
 }

@@ -30,8 +30,9 @@ iframe {
 }
 
 #vid-details > h3 {
-    font-family: ch-book;
-    color: #005f73;
+    font-family: ch-medium;
+    color: var(--midnight-blue);
+    text-align: center;
     margin: 0;
-    max-width: 500px;
+    max-width: 60vw;
 }
