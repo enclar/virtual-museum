@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useEffect, useState } from "react";
+import React, { useReducer, createContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import urlcat from "urlcat";
 import museumReducer from "./museumReducer";
@@ -17,6 +17,7 @@ import PlanYourVisit from "./Plan/PlanYourVisit";
 export const DataContext = createContext();
 
 const App = () => {
+  // Setting up reducer
   const [museum, dispatch] = useReducer(museumReducer, {
     // Relating to a selected artwork and its details
     selectedArtwork: {},
