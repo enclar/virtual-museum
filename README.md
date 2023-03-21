@@ -7,5 +7,3 @@
 ![artwork filters](./readme-imgs/VM-06.png)
 ![future developments](./readme-imgs/VM-07.png)
 ![credits](./readme-imgs/VM-08.png)
-
-test!

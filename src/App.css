@@ -1,4 +1,4 @@
-@font-face {
+ @font-face {
     font-family: ch-bold;
     src: url(./fonts/CooperHewitt-Bold.otf);
 }
@@ -40,8 +40,16 @@
     --olive-green: #767e2b;
     --maroon-red: #ac311f;
     --light-blue: #cee8f0;
+    
+    --scarlett: #f26749;
+    --brass: #ea9836;
+    --sparkling: #83a5f2;
+    --electric: #204ecf;
+    --rosy: #f9a197;
+    --peachy: #fcded6;
 }
 
 body {
     margin: 0;
+    font-size: 1vw;
 }

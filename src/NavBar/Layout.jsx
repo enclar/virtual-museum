@@ -5,10 +5,10 @@ import NavBar from "./NavBar";
 
 const Layout = () => {
     return (
-        <React.Fragment>
+        <div id="hdr-layout">
             <NavBar />
-            <Outlet />
-        </React.Fragment>
+            <Outlet id="outlet" />
+        </div>
     );
 };
 
