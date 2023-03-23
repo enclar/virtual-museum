@@ -1,26 +1,26 @@
 #explore {
+    background: #ffeae9;
+    min-height: 85vh;
+    height: fit-content;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    height: fit-content;
-    background: var(--beige);
 }
 
 #explore-top {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     gap: 40px;
     align-items: center;
-    width: 100vw;
-    background-image: linear-gradient(to bottom, white, var(--beige));
 }
 
 #explore-top > h1 {
     font-family: ch-semibold;
     color: white;
-    background-color: var(--maroon-red);
-    box-shadow: 7px 7px var(--midnight-blue);
+    background-color: var(--brass);
+    box-shadow: 7px 7px var(--scarlett);
     width: fit-content;
     height: fit-content;
     padding: 10px 50px 3px;
@@ -30,8 +30,9 @@
 
 #lights {
     width: 60vw;
-    height: 65px;
+    height: fit-content;
     background: center / contain no-repeat url(../images/spotlights.png);
+    background-size: contain;
 }
 
 #explore-bottom {
@@ -40,32 +41,29 @@
 }
 
 #results-left, #results-right {
-    background: black;
+    background: #fddedb;
     width: 15vw;
     height: 84.9vh;
     padding: 100px 0 30px;
-    border: 0.5px solid rgb(190, 190, 190);
     transform: scaleX(-1);
 }
 
 #results-left {
-    background-image: linear-gradient(to bottom right, var(--beige), white);
     clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0 100%);
 }
 
 #results-right {
-    background-image: linear-gradient(to bottom left, var(--beige), white);
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
 }
 
 #results-center {
-    background-image: radial-gradient(white, var(--beige));
+    background: #edcfce;
     width: 70vw;
     height: 80vh;
     padding: 100px 0 30px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    border: 1px solid rgb(190, 190, 190);
 }

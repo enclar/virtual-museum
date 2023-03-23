@@ -12,10 +12,10 @@
 
 #preset-filters > input, #query {
     background: white;
-    color: var(--midnight-blue);
     border: none;
     padding: 5px 10px 2.5px;
     height: 25px;
+
     font-family: ch-semibold;
 }
 
@@ -24,7 +24,9 @@
 }
 
 #preset-filters > input:focus, #query:focus {
-    background: var(--mustard);
+    background: var(--rosy);
+    border: none;
+
     color: white;
 }
 
@@ -35,7 +37,7 @@
 }
 
 #filters > #buttons > button {
-    background: var(--olive-green);
+    background: var(--rosy);
     color: white;
     border: none;
     cursor: pointer;
@@ -46,6 +48,5 @@
 }
 
 #filters > #buttons > button:hover {
-    background: var(--mustard);
-    color: var(--midnight-blue);
+    background: var(--scarlett);
 }

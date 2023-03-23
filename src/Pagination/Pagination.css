@@ -9,22 +9,22 @@
 }
 
 #pagination > div#buttons > button {
-    background: var(--maroon-red);
-    color: white;
+    background: var(--rosy);
     border: none;
     cursor: pointer;
     padding: 5px 10px 2.5px;
     width: 75px;
     height: 25px;
+
+    color: white;
     font-family: ch-semibold;
 }
 
 #pagination > div#buttons > button:hover {
-    background: var(--mustard);
-    color: var(--midnight-blue);
+    background: var(--sparkling);
 }
 
 #pagination > h5 {
     font-family: ch-medium;
-    color: var(--midnight-blue);
+    color: var(--scarlett);
 }

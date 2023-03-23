@@ -1,9 +1,9 @@
 /* ====== Results.jsx ====== */
 h2#no-results {
+    color: var(--scarlett);
     font-family: ch-semibold;
     letter-spacing: 5px;
     padding: 50px 0;
-    color: var(--maroon-red);
 }
 
 #artwork-container {
@@ -38,22 +38,25 @@ progress {
 }
 
 .artwork {
+    background-color: rgb(240, 203, 111);
+    border: 8px double var(--brass);
+    padding: 5px;
+
     flex-shrink: 0;
     display: inline-block;
     object-fit: cover;
-    border: 8px double var(--mustard);
-    padding: 5px;
-    background-color: rgb(240, 203, 111);
 }
 
 #no-img {
+    background: rgb(240, 203, 111);
     width: 263px;
     height: 320px;
-    background: rgb(240, 203, 111);
+    border: 8px double var(--brass);
+
     color: white;
-    border: 8px double var(--mustard);
     font-family: ch-medium;
     font-size: 20px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,20 +64,23 @@ progress {
 
 /* ====== Heart.jsx ====== */
 .heart {
+    background: rgb(256, 256, 256, 0.5);
     width: 25px;
     height: 25px;
     border-radius: 12.5px;
-    display: flex;
-    justify-content: center;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--rosy);
+
+    color: rgb(256, 256, 256, 0.5);
     font-size: 1.5em;
     cursor: pointer;
-    background: rgb(256, 256, 256, 0.5);
-    color: rgb(256, 256, 256, 0.5);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: grey;
+
+    display: flex;
+    justify-content: center;
 }
 
 .fav {
-    color: var(--maroon-red);
+    color: var(--scarlett);
     -webkit-text-stroke-width: 0px;
 }
