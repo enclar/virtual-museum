@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 
 const Layout = () => {
     return (
-        <div id="hdr-layout">
+        <div id="layout">
             <NavBar />
             <Outlet id="outlet" />
         </div>

@@ -1,78 +1,77 @@
 #home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    background-image: linear-gradient(to bottom, var(--light-blue), white);
-    padding: 50px 0 0;
-    /* min-height: 100vh; */
+    background: linear-gradient(var(--sparkling), white);
+    min-height: calc(85vh - 50px);
     height: fit-content;
-}
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
 
-#welcome {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 30px
-}
 
-#welcome > .circle {
-    width: 8px;
-    height: 8px;
-    background-color: var(--midnight-blue);
-    border-radius: 4px;
-}
-
-#wt {
-    color: var(--midnight-blue);
-    font-family: newyork;
-    font-size: 2vw;
-    margin: 0;
-}
-
-#ch {
-    color: var(--maroon-red);
-    font-family: ch-semibold;
-    font-size: 5vw;
-    text-align: center;
-    letter-spacing: 3px;
-    margin: 0;
-}
-
-#ch > span {
-    color: var(--mustard);
-}
-
-#online {
-    font-size: 3vw;
-    line-height: 20%;
-    font-family: newyork;
-    color: var(--midnight-blue);
-    margin: 0;
-}
-
-#home-img {
     position: relative;
-    width: 100vw;
-    height: fit-content;
-    background-size: cover;
-    border: none;
-    margin-top: 50px;
 }
 
-#home-img > p {
-    max-width: 50vw;
+#home-content {
+    width: 25vw;
+
+    color: var(--electric);
     text-align: center;
-    font-family: ch-medium;
-    color: var(--midnight-blue);
-    position: absolute;
-    left: 25%;
-    font-size: 0.9vw;
 }
 
-#home-img > img {
-    object-fit: cover;
-    object-position: 50% 100% ;
-    width: 100vw;
-    height: fit-content;
+#home-welcome{
+    margin: 0;
+
+    font-family: ch-medium;
+    font-size: 20px;
+}
+
+#home-title {
+    margin: 0;
     margin-top: 30px;
+
+    color: var(--brass);
+    font-family: ch-semibold;
+    font-size: 50px;
+    text-shadow: 3px 3px var(--electric);
+}
+
+#home-subtitle {
+    margin: 0;
+
+    color: var(--peachy);
+    font-family: ch-medium;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-shadow: 1.5px 1.5px var(--electric);
+}
+
+#home-descr {
+    margin: 0;
+    margin-top: 50px;
+
+    font-family: ch-book;
+    text-align: justify;
+}
+
+.museum-img {
+    width: 35vw;
+    height: 90%;
+    
+    object-fit: cover;
+    object-position: right;
+
+    position: absolute;
+    bottom: 0;
+}
+
+#museum-half-left {
+    left: 0;
+}
+
+#museum-half-right {
+    transform: scaleX(-1);
+
+    right: 0;
 }
