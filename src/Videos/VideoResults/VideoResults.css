@@ -1,14 +1,18 @@
 #vid-container {
     width: 60vw;
+    height: 100%;
     padding: 20px 0 40px;
     overflow-x: scroll;
-    overflow-y: hidden;
+    margin-top: 25px;
+
+    display: flex;
 }
 
 #vid-results {
+    height: fit-content;
+
     display: flex;
     gap: 50px;
-    padding: 0 30px;
 }
 
 .video-div {
@@ -19,16 +23,18 @@
 }
 
 .video {
+    background: center no-repeat url(../../images/static-bg.jpg);
     width: 280px;
     height: 180px;
-    background: center no-repeat url(../../images/static-bg.jpg);
+    padding: 0px 20px;
+    border: 5px solid var(--midnight-blue);
+
     color: var(--midnight-blue);
+    text-align: center;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 20px;
-    text-align: center;
-    border: 5px solid var(--midnight-blue);
 }
 
 .video:hover {

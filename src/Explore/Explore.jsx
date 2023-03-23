@@ -24,13 +24,11 @@ const Explore = () => {
                 <Filters />
             </div>
             <div id="explore-bottom">
-                <div id="results-left"></div>
                 <div id="results-center">
                     <div id="lights"></div>
                     <Results />
                     <Pagination />
                 </div>
-                <div id="results-right"></div>
             </div>
         </div>
     );

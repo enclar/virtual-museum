@@ -99,7 +99,7 @@ const Filters = () => {
 
             <div id="buttons">
                 <button id="clear-btn" onClick={handleClear}>CLEAR ALL</button>
-                <button id="search-btn" onClick={handleSearch}>SEARCH</button>
+                <button id="search-btn" onClick={handleSearch}>FILTER</button>
             </div>
         </div>
     );

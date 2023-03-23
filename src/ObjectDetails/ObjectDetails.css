@@ -1,26 +1,27 @@
 /* ====== ObjectDetails.jsx ====== */
 #obj-details {
+    background: url(../images/detail-background.png);   
+    background-size: 25%;
+
+    min-height: 100vh;
+    height: fit-content;
+
     display: flex;
     flex-direction: column;
     gap: 35px;
     align-items: center;
-    height: 100%;
-    /* background: var(--beige); */
-    background: url(../images/detail-background.png);
-    background-size: 200px 200px;
-    color: rgb(202, 202, 202, 0.1);
-    min-height: 100vh;
-    height: fit-content;
-    padding: 30px 0 100px 0;
+
+    padding: 50px 0 100px 0;
     font-family: ch-semibold;
 }
 
 #title {
+    margin-top: 50px;
+
     display: flex;
     gap: 40px;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 #title > h1 {
@@ -31,9 +32,9 @@
     padding: 18px 30px 10px 30px;
     max-width: 60vw;
     font-size: 40px;
-    background: var(--mustard);
+    background: var(--brass);
     color: white;
-    box-shadow: 10px 10px var(--maroon-red);
+    box-shadow: 10px 10px var(--sparkling);
 }
 
 #title > div {
@@ -41,26 +42,25 @@
     height: 40px;
     border-radius: 20px;
     line-height: 200%;
-    background: var(--beige);
+    background: var(--peachy);
 }
 
 #artwork-info {
+    margin-top: 50px;
+
     display: flex;
     gap: 30px;
-    margin-top: 20px;
-    color: var(--midnight-blue);
 }
 
 /* ====== Breadcrumbs.jsx ====== */
 #breadcrumbs {
-    font-family: ch-book;
-    color: var(--midnight-blue);
+    font-family: ch-medium;
+    color: var(--scarlett);
     letter-spacing: 1px;
 }
 
 #breadcrumbs > span:hover {
-    font-family: ch-medium;
-    color: var(--mustard);
+    color: var(--brass);
     text-decoration: underline;
     cursor: pointer;
 }
@@ -129,7 +129,7 @@
 }
 
 .info-category > h2 {
-    background: var(--olive-green);
+    background: var(--sparkling);
     color: white;
     width: 17vw;
     height: 40px;
@@ -153,7 +153,7 @@ h3 {
 }
 
 span.not-avail {
-    color: var(--maroon-red);
+    color: var(--scarlett);
     font-size: 100%;
     font-family: ch-light;
     font-style: italic;
@@ -177,18 +177,18 @@ h3 > span.category {
 }
 
 #back-btn {
-    background: var(--maroon-red);
-    color: white;
+    background: var(--rosy);
+    width: 100px;
     border: none;
     cursor: pointer;
     font-size: 20px;
     padding: 6px 0 3px;
-    width: 100px;
-    height: 30px;
+    margin-top: 50px;
+
+    color: white;
     font-family: ch-semibold;
 }
 
 #back-btn:hover {
-    background: var(--mustard);
-    color: var(--midnight-blue);
+    background: var(--electric);
 }

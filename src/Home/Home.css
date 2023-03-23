@@ -1,5 +1,9 @@
 #home {
     background: linear-gradient(var(--sparkling), white);
+    background-size: 100%;
+    background-blend-mode: multiply;
+
+
     min-height: calc(85vh - 50px);
     height: fit-content;
     margin: 0;

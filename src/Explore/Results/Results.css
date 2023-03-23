@@ -10,6 +10,8 @@ h2#no-results {
     width: 60vw;
     height: fit-content;
     padding: 20px 0 40px;
+    margin-top: 50px;
+
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
