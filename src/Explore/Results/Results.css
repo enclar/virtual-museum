@@ -69,13 +69,14 @@ progress {
     background: rgb(256, 256, 256, 0.5);
     width: 25px;
     height: 25px;
-    border-radius: 12.5px;
+    border-radius: 14.5px;
+    padding: 2px;
 
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--rosy);
 
     color: rgb(256, 256, 256, 0.5);
-    font-size: 1.5em;
+    font-size: 1.1em;
     cursor: pointer;
 
     display: flex;

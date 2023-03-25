@@ -5,8 +5,6 @@ import museum_half from "../../src/images/museum-half.png"
 const Home = () => {
     return (
         <div id="home">
-            <img src={museum_half} className="museum-img" id="museum-half-left" />
-
             <div id="home-content">
                 <p id="home-welcome">WELCOME TO THE</p>
                 <p id="home-title">COOPER HEWITT</p>
@@ -17,7 +15,10 @@ const Home = () => {
                 </p>
             </div>
 
-            <img src={museum_half} className="museum-img" id="museum-half-right" />
+            <div id="home-img">
+                <img src={museum_half} className="museum-img" id="museum-half-left" />
+                <img src={museum_half} className="museum-img" id="museum-half-right" />
+            </div>
         </div>
     );
 };

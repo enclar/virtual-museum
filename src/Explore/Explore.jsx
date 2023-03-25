@@ -1,27 +1,38 @@
 //! Component to display artworks for users to explore
 
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { DataContext } from "../App";
 import "./Explore.css";
 
 import Filters from "./Filters/Filters";
 import Results from "./Results/Results";
 import Pagination from "../Pagination/Pagination";
-import PageNumbers from "../ARCHIVE/PageNumbersArchive";
 
 const Explore = () => {
     // Importing context
     const dataContext = useContext(DataContext);
 
+    // Setting up state
+    const [filter, setFilter] = useState(false);
+
     useEffect(() => {
         dataContext.dispatch({type: "UPDATE_CURR_LOCATION", value: "explore"}) // Logging current page
     }, []);
+
+    // Function to show filters
+    const showFilters = () => {
+        setFilter(!filter);
+    };
 
     return (
         <div id="explore">
             <div id="explore-top">
                 <h1>EXPLORE</h1>
-                <Filters />
+                {
+                    !filter ?
+                    <p id="filter-btn" onClick={showFilters}>FILTER ARTWORK</p> :
+                    <Filters />
+                }
             </div>
             <div id="explore-bottom">
                 <div id="results-center">

@@ -44,11 +44,10 @@
 #home-subtitle {
     margin: 0;
 
-    color: var(--peachy);
+    color: var(--brass);
     font-family: ch-medium;
     font-size: 22px;
     letter-spacing: 2px;
-    text-shadow: 1.5px 1.5px var(--electric);
 }
 
 #home-descr {
@@ -61,12 +60,13 @@
 
 .museum-img {
     width: 35vw;
-    height: 90%;
+    height: fit-content;
     
     object-fit: cover;
     object-position: right;
 
     position: absolute;
+    top: 50px;
     bottom: 0;
 }
 
@@ -78,4 +78,66 @@
     transform: scaleX(-1);
 
     right: 0;
+}
+
+/* Responsive Design - Small Screen */
+@media only screen and (max-width: 640px) {  
+    #home {
+        min-height: 75vh;
+        padding-top: 5vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    #home-content {
+        width: 70vw;
+    }
+    
+    #home-welcome{
+        font-size: 20px;
+    }
+    
+    #home-title {
+        margin-top: 30px;
+        font-size: 40px;
+        line-height: 100%;
+    }
+    
+    #home-subtitle {
+        margin-top: 15px;
+        font-size: 18px;
+        font-family: ch-semibold;
+    }
+    
+    #home-descr {
+        margin-top: 30px;
+        font-size: 15px;
+    }
+    
+    #home-img {
+        margin-top: 5vh;
+        display: flex;
+        gap: 0;
+    }
+
+    .museum-img {
+        width: 35vw;
+        height: fit-content;
+        
+        object-fit: contain;
+        object-position: right;
+    
+        position: relative;
+    }
+    
+    #museum-half-left {
+        margin: 0;
+        transform: scaleX(-1);
+    }
+    
+    #museum-half-right {
+        margin: 0;
+        transform: scaleX(1);
+    } 
 }
